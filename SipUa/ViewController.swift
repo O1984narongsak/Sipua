@@ -25,10 +25,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbPN: UILabel!
     @IBOutlet weak var lbPW: UILabel!
     
+    @IBOutlet weak var btnToHome: UIButton!
+    @IBOutlet weak var btnBGToHome: UIView!
+    //TODO: - DropDown
+    @IBOutlet weak var tbList: UITableView!
+    @IBOutlet weak var tbLHC: NSLayoutConstraint!
+    @IBOutlet weak var btnDropDownList: UIButton!
+    
     var isShowChecked = false
     var isSaveChecked = false
     var isPressPS = false
     var isPressPN = false
+    
+    var isShowList = false
+    
+    var positionPN: CGPoint!
+    var positionPW: CGPoint!
+    var listArr = [String]()
     
     
     override func viewDidLoad() {
@@ -40,6 +53,8 @@ class ViewController: UIViewController {
     
     func setupView() {
         
+        positionPN = lbPN.center
+        positionPW = lbPW.center
         oRemember.layer.cornerRadius = oRemember.frame.width/2
         oRemember.layer.borderWidth = 2
         oRemember.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
@@ -51,6 +66,14 @@ class ViewController: UIViewController {
         oTFoPassword.addTarget(self, action: #selector(pressPass), for: UIControl.Event.touchDown)
         oTFoPhoneNumber.addTarget(self, action: #selector(pressPN), for: UIControl.Event.touchDown)
         
+        btnToHome.translatesAutoresizingMaskIntoConstraints = false
+        
+        tbList.delegate = self
+        tbList.dataSource = self
+        tbLHC.constant = 0
+        tbList.isHidden = true
+        
+        listArr = ["sip.linphone.org","ucc.ais.co.th"]
     }
     
     @objc func pressPass(textField: UITextField){
@@ -60,13 +83,15 @@ class ViewController: UIViewController {
             self.oULPN.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             lbPN.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             lbPW.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.lbPN.center = self.oTFoPhoneNumber.center
+                self.lbPN.font.withSize(24.0)
+                self.lbPW.center = self.positionPW
+                self.lbPW.font.withSize(17.0)
+            })
             isPressPS = !isPressPS
         }
-//        } else {
-////        if isPressPN{
-//            self.oULPass.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//            self.oULPN.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-//        }
+
         
     }
     
@@ -77,6 +102,12 @@ class ViewController: UIViewController {
             self.oULPN.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             lbPW.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             lbPN.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            UIView.animate(withDuration: 0.3, animations: {
+             self.lbPW.center = self.oTFoPassword.center
+             self.lbPW.font.withSize(24.0)
+             self.lbPN.center = self.positionPN
+             self.lbPN.font.withSize(17.0)
+            })
             isPressPN = !isPressPN
         }
 
@@ -115,5 +146,56 @@ class ViewController: UIViewController {
         
         
     }
+    //TODO: - DRopDown
+    
+    @IBAction func selectNumberOfList(_ sender: Any) {
+        isShowList = !isShowList
+        if isShowList{
+            tbList.isHidden = false
+            self.tbLHC.constant = 40 * 2
+            self.view.layoutIfNeeded()
+        }else{
+            tbList.isHidden = true
+        }
+    }
+    
+    
+    
+    //TODO: - Login
+    @IBAction func pressToHome(_ sender: UIButton) {
+        setPushAnimation()
+    }
+    
+    func setPushAnimation(){
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.btnToHome.alpha = 0
+            self.btnToHome.center = self.btnBGToHome.center
+            })
+        
+        
+    }
 }
 
+//MARK: - UITableViewDelegate UITableViewDatasource
+extension ViewController : UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "numberofrooms")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "numberofrooms")
+            cell?.textLabel?.text = listArr[indexPath.row]
+        }
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        tbList.isHidden = true
+    }
+}

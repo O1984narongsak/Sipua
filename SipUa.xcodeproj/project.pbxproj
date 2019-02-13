@@ -12,6 +12,10 @@
 		305C71A1220C15A4000E1804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C719F220C15A4000E1804 /* Main.storyboard */; };
 		305C71A3220C15A6000E1804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305C71A2220C15A6000E1804 /* Assets.xcassets */; };
 		305C71A6220C15A6000E1804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C71A4220C15A6000E1804 /* LaunchScreen.storyboard */; };
+		307EF84B221114D600FA4075 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84A221114D600FA4075 /* HomeVC.swift */; };
+		307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */; };
+		307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84E2211699D00FA4075 /* SidebarView.swift */; };
+		307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF85022126B8A00FA4075 /* EditProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		305C71A2220C15A6000E1804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		305C71A5220C15A6000E1804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		305C71A7220C15A6000E1804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		307EF84A221114D600FA4075 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooninSlideInHandler.swift; sourceTree = "<group>"; };
+		307EF84E2211699D00FA4075 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		307EF85022126B8A00FA4075 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				305C719B220C15A4000E1804 /* AppDelegate.swift */,
 				305C719D220C15A4000E1804 /* ViewController.swift */,
+				307EF84A221114D600FA4075 /* HomeVC.swift */,
+				307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */,
+				307EF85022126B8A00FA4075 /* EditProfileVC.swift */,
+				307EF84E2211699D00FA4075 /* SidebarView.swift */,
 				305C719F220C15A4000E1804 /* Main.storyboard */,
 				305C71A2220C15A6000E1804 /* Assets.xcassets */,
 				305C71A4220C15A6000E1804 /* LaunchScreen.storyboard */,
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307EF84B221114D600FA4075 /* HomeVC.swift in Sources */,
+				307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */,
+				307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */,
 				305C719E220C15A4000E1804 /* ViewController.swift in Sources */,
+				307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */,
 				305C719C220C15A4000E1804 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = censpi.SipUa;
+				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.SipUa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = censpi.SipUa;
+				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.SipUa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
