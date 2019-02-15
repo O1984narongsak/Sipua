@@ -7,7 +7,23 @@
 //
 
 import UIKit
+import SipUAFramwork
+import LinphoneModule
+import PushKit
+import UserNotifications
+import AudioToolbox
 
+//MARK: - Global properties
+/** SipUAManager Global properties */
+//let sipUAManager: SipUAManager = AppDelegate.shared.sipUAManager
+///** CallKit Provider Global properties */
+//let Provider: CallKitProvider = AppDelegate.shared.callKitProvider
+///** CallKit Controller Global properties */
+//let Controller: CallKitCallController = AppDelegate.shared.callKitCallController
+
+
+
+//MARK: - Appdelegate class
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
