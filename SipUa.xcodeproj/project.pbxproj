@@ -16,9 +16,32 @@
 		307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */; };
 		307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84E2211699D00FA4075 /* SidebarView.swift */; };
 		307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF85022126B8A00FA4075 /* EditProfileVC.swift */; };
+		30972D5A22142A0D00BDE396 /* BMDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972D5422142A0D00BDE396 /* BMDialView.swift */; };
+		30972D5B22142A0D00BDE396 /* Phone Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30972D5522142A0D00BDE396 /* Phone Filled@2x.png */; };
+		30972D5C22142A0D00BDE396 /* PhoneDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972D5622142A0D00BDE396 /* PhoneDigit.swift */; };
+		30972D5D22142A0D00BDE396 /* Backspace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30972D5722142A0D00BDE396 /* Backspace@2x.png */; };
+		30972D5E22142A0D00BDE396 /* Phone Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30972D5822142A0D00BDE396 /* Phone Filled@3x.png */; };
+		30972D5F22142A0D00BDE396 /* Backspace@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30972D5922142A0D00BDE396 /* Backspace@3x.png */; };
+		30972D6222142E9600BDE396 /* MainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972D6122142E9600BDE396 /* MainHomeVC.swift */; };
+		30972D66221430B600BDE396 /* Contracts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30972D65221430B600BDE396 /* Contracts.storyboard */; };
+		30B698B02214FE00005D4F4F /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698AF2214FE00005D4F4F /* ContactVC.swift */; };
+		30B698B22214FE18005D4F4F /* PhonPadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698B12214FE18005D4F4F /* PhonPadVC.swift */; };
+		30B698B42214FE3E005D4F4F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698B32214FE3E005D4F4F /* HistoryVC.swift */; };
+		30B698B62214FF46005D4F4F /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B698B52214FF46005D4F4F /* History.storyboard */; };
+		30B698B82214FF6F005D4F4F /* PhonPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B698B72214FF6F005D4F4F /* PhonPad.storyboard */; };
+		30B698BB22150B47005D4F4F /* ExtenUIviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698BA22150B47005D4F4F /* ExtenUIviewController.swift */; };
+		30B698BF22150D77005D4F4F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698BE22150D77005D4F4F /* BaseVC.swift */; };
+		30B698C1221511EB005D4F4F /* ExtenUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698C0221511EB005D4F4F /* ExtenUIFont.swift */; };
+		30B698C322151380005D4F4F /* EXtenUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698C222151380005D4F4F /* EXtenUIColor.swift */; };
+		30B698C52215477E005D4F4F /* ExtensionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698C42215477E005D4F4F /* ExtensionAlert.swift */; };
+		30B698C722154DF2005D4F4F /* eng.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30B698C622154DF2005D4F4F /* eng.strings */; };
+		30B698C922154E0A005D4F4F /* th.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30B698C822154E0A005D4F4F /* th.strings */; };
+		839D2F6EF21EBFEAC9D6A677 /* Pods_SipUa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A01A3C5963250A305E44CC /* Pods_SipUa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07A01A3C5963250A305E44CC /* Pods_SipUa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SipUa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A52027143257C14A73F35F1 /* Pods-SipUa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipUa.release.xcconfig"; path = "Pods/Target Support Files/Pods-SipUa/Pods-SipUa.release.xcconfig"; sourceTree = "<group>"; };
 		305C7198220C15A4000E1804 /* SipUa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SipUa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305C719B220C15A4000E1804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305C719D220C15A4000E1804 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +53,27 @@
 		307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooninSlideInHandler.swift; sourceTree = "<group>"; };
 		307EF84E2211699D00FA4075 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		307EF85022126B8A00FA4075 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		30972D5422142A0D00BDE396 /* BMDialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMDialView.swift; sourceTree = "<group>"; };
+		30972D5522142A0D00BDE396 /* Phone Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone Filled@2x.png"; sourceTree = "<group>"; };
+		30972D5622142A0D00BDE396 /* PhoneDigit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneDigit.swift; sourceTree = "<group>"; };
+		30972D5722142A0D00BDE396 /* Backspace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backspace@2x.png"; sourceTree = "<group>"; };
+		30972D5822142A0D00BDE396 /* Phone Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone Filled@3x.png"; sourceTree = "<group>"; };
+		30972D5922142A0D00BDE396 /* Backspace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backspace@3x.png"; sourceTree = "<group>"; };
+		30972D6122142E9600BDE396 /* MainHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeVC.swift; sourceTree = "<group>"; };
+		30972D65221430B600BDE396 /* Contracts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contracts.storyboard; sourceTree = "<group>"; };
+		30B698AF2214FE00005D4F4F /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		30B698B12214FE18005D4F4F /* PhonPadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonPadVC.swift; sourceTree = "<group>"; };
+		30B698B32214FE3E005D4F4F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		30B698B52214FF46005D4F4F /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		30B698B72214FF6F005D4F4F /* PhonPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhonPad.storyboard; sourceTree = "<group>"; };
+		30B698BA22150B47005D4F4F /* ExtenUIviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenUIviewController.swift; sourceTree = "<group>"; };
+		30B698BE22150D77005D4F4F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		30B698C0221511EB005D4F4F /* ExtenUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenUIFont.swift; sourceTree = "<group>"; };
+		30B698C222151380005D4F4F /* EXtenUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXtenUIColor.swift; sourceTree = "<group>"; };
+		30B698C42215477E005D4F4F /* ExtensionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlert.swift; sourceTree = "<group>"; };
+		30B698C622154DF2005D4F4F /* eng.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = eng.strings; sourceTree = "<group>"; };
+		30B698C822154E0A005D4F4F /* th.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = th.strings; sourceTree = "<group>"; };
+		CFEA737A5FEE359835B82894 /* Pods-SipUa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipUa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SipUa/Pods-SipUa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839D2F6EF21EBFEAC9D6A677 /* Pods_SipUa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +91,11 @@
 		305C718F220C15A4000E1804 = {
 			isa = PBXGroup;
 			children = (
+				30972D52221429CF00BDE396 /* Lib */,
 				305C719A220C15A4000E1804 /* SipUa */,
 				305C7199220C15A4000E1804 /* Products */,
+				321C26F7FA345596DE5F2DEB /* Pods */,
+				8937CF47106A517183CDC4A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +110,150 @@
 		305C719A220C15A4000E1804 /* SipUa */ = {
 			isa = PBXGroup;
 			children = (
+				30B698B922150B12005D4F4F /* Extensions */,
+				30972D68221430CB00BDE396 /* ViewControllers */,
+				30972D642214308D00BDE396 /* StoryBoards */,
 				305C719B220C15A4000E1804 /* AppDelegate.swift */,
 				305C719D220C15A4000E1804 /* ViewController.swift */,
 				307EF84A221114D600FA4075 /* HomeVC.swift */,
 				307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */,
 				307EF85022126B8A00FA4075 /* EditProfileVC.swift */,
 				307EF84E2211699D00FA4075 /* SidebarView.swift */,
-				305C719F220C15A4000E1804 /* Main.storyboard */,
+				30B698C622154DF2005D4F4F /* eng.strings */,
+				30B698C822154E0A005D4F4F /* th.strings */,
 				305C71A2220C15A6000E1804 /* Assets.xcassets */,
 				305C71A4220C15A6000E1804 /* LaunchScreen.storyboard */,
 				305C71A7220C15A6000E1804 /* Info.plist */,
 			);
 			path = SipUa;
+			sourceTree = "<group>";
+		};
+		30972D52221429CF00BDE396 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				30972D53221429D600BDE396 /* PhonePad */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		30972D53221429D600BDE396 /* PhonePad */ = {
+			isa = PBXGroup;
+			children = (
+				30972D5722142A0D00BDE396 /* Backspace@2x.png */,
+				30972D5922142A0D00BDE396 /* Backspace@3x.png */,
+				30972D5422142A0D00BDE396 /* BMDialView.swift */,
+				30972D5522142A0D00BDE396 /* Phone Filled@2x.png */,
+				30972D5822142A0D00BDE396 /* Phone Filled@3x.png */,
+				30972D5622142A0D00BDE396 /* PhoneDigit.swift */,
+			);
+			path = PhonePad;
+			sourceTree = "<group>";
+		};
+		30972D6022142E7900BDE396 /* Mian */ = {
+			isa = PBXGroup;
+			children = (
+				30972D6122142E9600BDE396 /* MainHomeVC.swift */,
+			);
+			path = Mian;
+			sourceTree = "<group>";
+		};
+		30972D632214307800BDE396 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				30972D67221430C000BDE396 /* Phone */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		30972D642214308D00BDE396 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				305C719F220C15A4000E1804 /* Main.storyboard */,
+				30972D65221430B600BDE396 /* Contracts.storyboard */,
+				30B698B52214FF46005D4F4F /* History.storyboard */,
+				30B698B72214FF6F005D4F4F /* PhonPad.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		30972D67221430C000BDE396 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		30972D68221430CB00BDE396 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				30B698BD22150D61005D4F4F /* BaseVC */,
+				30B698AE2214FC39005D4F4F /* History */,
+				30B698AD2214FC28005D4F4F /* PhonPad */,
+				30B698AC2214FC16005D4F4F /* Contact */,
+				30972D6022142E7900BDE396 /* Mian */,
+				30972D632214307800BDE396 /* Contract */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		30B698AC2214FC16005D4F4F /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				30B698AF2214FE00005D4F4F /* ContactVC.swift */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		30B698AD2214FC28005D4F4F /* PhonPad */ = {
+			isa = PBXGroup;
+			children = (
+				30B698B12214FE18005D4F4F /* PhonPadVC.swift */,
+			);
+			name = PhonPad;
+			sourceTree = "<group>";
+		};
+		30B698AE2214FC39005D4F4F /* History */ = {
+			isa = PBXGroup;
+			children = (
+				30B698B32214FE3E005D4F4F /* HistoryVC.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		30B698B922150B12005D4F4F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30B698BA22150B47005D4F4F /* ExtenUIviewController.swift */,
+				30B698C0221511EB005D4F4F /* ExtenUIFont.swift */,
+				30B698C222151380005D4F4F /* EXtenUIColor.swift */,
+				30B698C42215477E005D4F4F /* ExtensionAlert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30B698BD22150D61005D4F4F /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				30B698BE22150D77005D4F4F /* BaseVC.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		321C26F7FA345596DE5F2DEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFEA737A5FEE359835B82894 /* Pods-SipUa.debug.xcconfig */,
+				2A52027143257C14A73F35F1 /* Pods-SipUa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8937CF47106A517183CDC4A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07A01A3C5963250A305E44CC /* Pods_SipUa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 305C71AA220C15A6000E1804 /* Build configuration list for PBXNativeTarget "SipUa" */;
 			buildPhases = (
+				BE050CD127F1CADEF7CAF5BC /* [CP] Check Pods Manifest.lock */,
 				305C7194220C15A4000E1804 /* Sources */,
 				305C7195220C15A4000E1804 /* Frameworks */,
 				305C7196220C15A4000E1804 /* Resources */,
+				068CBA77EDFD527CEC8B07BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,23 +318,92 @@
 			files = (
 				305C71A6220C15A6000E1804 /* LaunchScreen.storyboard in Resources */,
 				305C71A3220C15A6000E1804 /* Assets.xcassets in Resources */,
+				30972D5B22142A0D00BDE396 /* Phone Filled@2x.png in Resources */,
+				30972D5E22142A0D00BDE396 /* Phone Filled@3x.png in Resources */,
+				30B698C722154DF2005D4F4F /* eng.strings in Resources */,
+				30972D66221430B600BDE396 /* Contracts.storyboard in Resources */,
+				30B698B82214FF6F005D4F4F /* PhonPad.storyboard in Resources */,
 				305C71A1220C15A4000E1804 /* Main.storyboard in Resources */,
+				30972D5F22142A0D00BDE396 /* Backspace@3x.png in Resources */,
+				30972D5D22142A0D00BDE396 /* Backspace@2x.png in Resources */,
+				30B698C922154E0A005D4F4F /* th.strings in Resources */,
+				30B698B62214FF46005D4F4F /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		068CBA77EDFD527CEC8B07BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SipUa/Pods-SipUa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/JAPagerViewController/JAPagerViewController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JAPagerViewController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SipUa/Pods-SipUa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE050CD127F1CADEF7CAF5BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SipUa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		305C7194220C15A4000E1804 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B698B22214FE18005D4F4F /* PhonPadVC.swift in Sources */,
+				30B698B42214FE3E005D4F4F /* HistoryVC.swift in Sources */,
 				307EF84B221114D600FA4075 /* HomeVC.swift in Sources */,
 				307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */,
 				307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */,
+				30B698C52215477E005D4F4F /* ExtensionAlert.swift in Sources */,
+				30B698C1221511EB005D4F4F /* ExtenUIFont.swift in Sources */,
+				30B698BF22150D77005D4F4F /* BaseVC.swift in Sources */,
 				305C719E220C15A4000E1804 /* ViewController.swift in Sources */,
+				30972D5A22142A0D00BDE396 /* BMDialView.swift in Sources */,
 				307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */,
+				30972D5C22142A0D00BDE396 /* PhoneDigit.swift in Sources */,
+				30972D6222142E9600BDE396 /* MainHomeVC.swift in Sources */,
 				305C719C220C15A4000E1804 /* AppDelegate.swift in Sources */,
+				30B698B02214FE00005D4F4F /* ContactVC.swift in Sources */,
+				30B698C322151380005D4F4F /* EXtenUIColor.swift in Sources */,
+				30B698BB22150B47005D4F4F /* ExtenUIviewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +547,7 @@
 		};
 		305C71AB220C15A6000E1804 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFEA737A5FEE359835B82894 /* Pods-SipUa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +566,7 @@
 		};
 		305C71AC220C15A6000E1804 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A52027143257C14A73F35F1 /* Pods-SipUa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

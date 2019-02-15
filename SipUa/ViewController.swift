@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ViewController: UIViewController {
 
@@ -43,6 +44,7 @@ class ViewController: UIViewController {
     var positionPW: CGPoint!
     var listArr = [String]()
     
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +59,11 @@ class ViewController: UIViewController {
         positionPW = lbPW.center
         oRemember.layer.cornerRadius = oRemember.frame.width/2
         oRemember.layer.borderWidth = 2
-        oRemember.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        oRemember.layer.borderColor = UIColor.custom_lightGreen.cgColor
         
         oShowPass.layer.cornerRadius = oShowPass.frame.height / 2
         oShowPass.layer.borderWidth = 2
-        oShowPass.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        oShowPass.layer.borderColor = UIColor.custom_lightGreen.cgColor
         
         oTFoPassword.addTarget(self, action: #selector(pressPass), for: UIControl.Event.touchDown)
         oTFoPhoneNumber.addTarget(self, action: #selector(pressPN), for: UIControl.Event.touchDown)
@@ -73,16 +75,19 @@ class ViewController: UIViewController {
         tbLHC.constant = 0
         tbList.isHidden = true
         
+        dropDown.anchorView = btnDropDownList
+        
         listArr = ["sip.linphone.org","ucc.ais.co.th"]
+        dropDown.dataSource = ["sip.linphone.org","ucc.ais.co.th"]
     }
     
     @objc func pressPass(textField: UITextField){
         isPressPS = !isPressPS
         if isPressPS{
-            self.oULPass.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            self.oULPN.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            lbPN.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            lbPW.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            self.oULPass.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
+            self.oULPN.layer.backgroundColor = UIColor.custom_black.cgColor
+            lbPN.textColor = UIColor.custom_black
+            lbPW.textColor = UIColor.custom_lightGreen
             UIView.animate(withDuration: 0.3, animations: {
                 self.lbPN.center = self.oTFoPhoneNumber.center
                 self.lbPN.font.withSize(24.0)
@@ -98,10 +103,10 @@ class ViewController: UIViewController {
     @objc func pressPN(textField: UITextField){
         isPressPN = !isPressPN
         if isPressPN{
-            self.oULPass.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            self.oULPN.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            lbPW.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            lbPN.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            self.oULPass.layer.backgroundColor = UIColor.custom_black.cgColor
+            self.oULPN.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
+            lbPW.textColor = UIColor.custom_black
+            lbPN.textColor = UIColor.custom_lightGreen
             UIView.animate(withDuration: 0.3, animations: {
              self.lbPW.center = self.oTFoPassword.center
              self.lbPW.font.withSize(24.0)
@@ -120,12 +125,12 @@ class ViewController: UIViewController {
         if isShowChecked {
             sender.setTitle("✓", for: .normal)
             sender.setTitleColor(.white, for: .normal)
-            self.oShowPass.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            self.oShowPass.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
             oTFoPassword.isSecureTextEntry = false
         } else {
             sender.setTitle("", for: .normal)
             sender.setTitleColor(.red, for: .normal)
-            self.oShowPass.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.oShowPass.layer.backgroundColor = UIColor.custom_white.cgColor
             oTFoPassword.isSecureTextEntry = true
         }
         
@@ -137,26 +142,30 @@ class ViewController: UIViewController {
         if isSaveChecked{
             sender.setTitle("✓", for: .normal)
             sender.setTitleColor(.white, for: .normal)
-            self.oRemember.layer.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            self.oRemember.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
         } else {
             sender.setTitle("", for: .normal)
             sender.setTitleColor(.red, for: .normal)
-            self.oRemember.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.oRemember.layer.backgroundColor = UIColor.custom_white.cgColor
         }
-        
         
     }
     //TODO: - DRopDown
     
     @IBAction func selectNumberOfList(_ sender: Any) {
-        isShowList = !isShowList
-        if isShowList{
-            tbList.isHidden = false
-            self.tbLHC.constant = 40 * 2
-            self.view.layoutIfNeeded()
-        }else{
-            tbList.isHidden = true
+        dropDown.show()
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.btnDropDownList.titleLabel?.text = item
         }
+//        isShowList = !isShowList
+//        if isShowList{
+//            tbList.isHidden = false
+//            self.tbLHC.constant = 40 * 2
+//            self.view.layoutIfNeeded()
+//        }else{
+//            tbList.isHidden = true
+//        }
     }
     
     
@@ -164,6 +173,9 @@ class ViewController: UIViewController {
     //TODO: - Login
     @IBAction func pressToHome(_ sender: UIButton) {
         setPushAnimation()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainNav")
+        self.present(vc, animated: true, completion: nil)
     }
     
     func setPushAnimation(){
@@ -171,6 +183,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.btnToHome.alpha = 0
             self.btnToHome.center = self.btnBGToHome.center
+            self.btnBGToHome.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
             })
         
         

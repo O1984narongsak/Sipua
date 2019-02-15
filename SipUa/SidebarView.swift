@@ -11,6 +11,7 @@ import UIKit
 
 protocol SidebarViewDelegate: class {
     func sidebarDidSelectRow(row: Row)
+    func sidebarDidSelectOldRow()
 }
 
 enum Row:String {
@@ -34,14 +35,18 @@ enum Row:String {
     }
 }
 
+struct SidebarViewRow {
+    static var rowSelect:Int = 1
+}
+
 class SidebarView: UIView,UITableViewDelegate,UITableViewDataSource {
-    var titleArr = [String]()
     
+    var titleArr = [String]()
     weak var delegate: SidebarViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.backgroundColor = UIColor.custom_white
         self.clipsToBounds = true
         
         setupViews()
@@ -88,7 +93,7 @@ class SidebarView: UIView,UITableViewDelegate,UITableViewDataSource {
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         if indexPath.row == 0 {
-            cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            cell.backgroundColor = UIColor.custom_lightGreen
             let cellImg = UIImageView(frame: CGRect(x: 15, y: 10, width: 80, height: 80))
             cellImg.layer.cornerRadius = 40
             cellImg.layer.masksToBounds = true
@@ -104,13 +109,28 @@ class SidebarView: UIView,UITableViewDelegate,UITableViewDataSource {
             cellLbl.textColor = UIColor.white
         } else {
             cell.textLabel?.text = titleArr[indexPath.row]
-            cell.textLabel?.textColor = UIColor.black
+            if indexPath.row == SidebarViewRow.rowSelect {
+                cell.backgroundColor = UIColor.custom_lightGreen
+                cell.textLabel?.textColor = UIColor.custom_white
+            }else{
+                cell.backgroundColor = UIColor.custom_white
+                cell.textLabel?.textColor = UIColor.custom_black
+            }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.sidebarDidSelectRow(row:Row(row:indexPath.row))
+        if indexPath.row != SidebarViewRow.rowSelect {
+            SidebarViewRow.rowSelect = indexPath.row
+            self.delegate?.sidebarDidSelectRow(row:Row(row:indexPath.row))
+        }else{
+            self.delegate?.sidebarDidSelectOldRow()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

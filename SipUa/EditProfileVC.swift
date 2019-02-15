@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EditProfileVC: UIViewController {
+class EditProfileVC: BaseVC {
     
     let lbl : UILabel = {
         let label = UILabel()
         label.text = "Edit Profile"
-        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = UIColor.custom_black
+        label.font = UIFont.systemFontSmall()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -34,6 +34,8 @@ class EditProfileVC: UIViewController {
         lbl.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
         lbl.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
+        self.addTitle(text: "Edit Profile")
+        self.addHamberBar()
     }
 
 

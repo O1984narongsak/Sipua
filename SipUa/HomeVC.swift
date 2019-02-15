@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
 //    let slidHD = SooninSlideInHandler()
     var sidebarView: SidebarView!
     var blackScreen: UIView!
+    
     var isPressContact = false
     var isPressHistory = false
     var isPressPhonePad = false
@@ -39,6 +40,19 @@ class HomeVC: UIViewController {
         contactView.isHidden = false
         historyView.isHidden = true
         phonePadView.isHidden = true
+        
+        self.phonePadView.layoutIfNeeded()
+        let dialView: BMDialView = BMDialView()
+        dialView.setupDialPad(frame: CGRect.init(x: 0,
+                                                 y: 0,
+                                                 width: self.phonePadView.frame.size.width,
+                                                 height: self.phonePadView.frame.size.height))
+        
+        
+        self.phonePadView.addSubview(dialView)
+        dialView.callTapped = { number in
+            print(number)
+        }
     }
     
     @IBAction func menuBar(_ sender: Any) {
@@ -147,6 +161,10 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC : SidebarViewDelegate {
+    func sidebarDidSelectOldRow() {
+        
+    }
+    
     func sidebarDidSelectRow(row: Row) {
         print("row: \(row)")
         blackScreen.isHidden = true
