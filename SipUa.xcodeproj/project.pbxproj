@@ -7,12 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30157145221CECF300597583 /* CallingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30157144221CECF300597583 /* CallingView.swift */; };
+		30157147221CF3CE00597583 /* Calling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30157146221CF3CE00597583 /* Calling.storyboard */; };
+		3015714B221D06E800597583 /* IncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015714A221D06E800597583 /* IncomingCall.swift */; };
+		3015714D221D072500597583 /* OutgoingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015714C221D072500597583 /* OutgoingCall.swift */; };
+		3015714F221D091A00597583 /* IncomingCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3015714E221D091A00597583 /* IncomingCallView.xib */; };
+		30157153221D098400597583 /* OutgoingCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30157152221D098400597583 /* OutgoingCallView.xib */; };
+		30157156221D31D800597583 /* ConferenceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30157155221D31D800597583 /* ConferenceCall.swift */; };
+		30157158221D31FC00597583 /* ConferenceCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30157157221D31FC00597583 /* ConferenceCallView.xib */; };
+		3015715B221D326300597583 /* ConferenceCallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30157159221D326300597583 /* ConferenceCallCell.swift */; };
+		3015715C221D326300597583 /* ConferenceCallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3015715A221D326300597583 /* ConferenceCallCell.xib */; };
+		3015715F221D328C00597583 /* ConferencePauseCallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015715D221D328C00597583 /* ConferencePauseCallCell.swift */; };
+		30157160221D328C00597583 /* ConferencePauseCallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3015715E221D328C00597583 /* ConferencePauseCallCell.xib */; };
+		304972552216C2D4007EEC8E /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304972542216C2D4007EEC8E /* ExtensionUIButton.swift */; };
+		304972572216C32C007EEC8E /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304972562216C32C007EEC8E /* ExtensionUIImage.swift */; };
+		304BE65C221EA66200588EAD /* SelectPauseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BE65A221EA66200588EAD /* SelectPauseCell.swift */; };
+		304BE65D221EA66200588EAD /* SelectPauseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304BE65B221EA66200588EAD /* SelectPauseCell.xib */; };
+		304BE660221EA68700588EAD /* PauseCallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304BE65E221EA68700588EAD /* PauseCallCell.swift */; };
+		304BE661221EA68700588EAD /* PauseCallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 304BE65F221EA68700588EAD /* PauseCallCell.xib */; };
 		305C719C220C15A4000E1804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C719B220C15A4000E1804 /* AppDelegate.swift */; };
-		305C719E220C15A4000E1804 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C719D220C15A4000E1804 /* ViewController.swift */; };
+		305C719E220C15A4000E1804 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C719D220C15A4000E1804 /* RegisterView.swift */; };
 		305C71A1220C15A4000E1804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C719F220C15A4000E1804 /* Main.storyboard */; };
 		305C71A3220C15A6000E1804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305C71A2220C15A6000E1804 /* Assets.xcassets */; };
 		305C71A6220C15A6000E1804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305C71A4220C15A6000E1804 /* LaunchScreen.storyboard */; };
-		307EF84B221114D600FA4075 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84A221114D600FA4075 /* HomeVC.swift */; };
+		307B03442223920E00C9FECE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B03432223920D00C9FECE /* User.swift */; };
+		307B03492223C45A00C9FECE /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 307B03462223C45500C9FECE /* ProgressHUD.bundle */; };
+		307B034A2223C45A00C9FECE /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B03482223C45A00C9FECE /* ProgressHUD.m */; };
 		307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */; };
 		307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF84E2211699D00FA4075 /* SidebarView.swift */; };
 		307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307EF85022126B8A00FA4075 /* EditProfileVC.swift */; };
@@ -56,32 +76,6 @@
 		3082FA3722165B2C00768815 /* rootca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3082FA2D22165B2C00768815 /* rootca.pem */; };
 		3082FA3822165B2C00768815 /* ringchat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3082FA2E22165B2C00768815 /* ringchat.wav */; };
 		3082FA3922165B2C00768815 /* ringback.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3082FA2F22165B2C00768815 /* ringback.wav */; };
-		3082FA4722165C9100768815 /* linphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3B22165C8F00768815 /* linphone.framework */; };
-		3082FA4822165C9100768815 /* linphone.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3B22165C8F00768815 /* linphone.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA4922165C9100768815 /* mediastreamer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3C22165C8F00768815 /* mediastreamer2.framework */; };
-		3082FA4A22165C9100768815 /* mediastreamer2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3C22165C8F00768815 /* mediastreamer2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA4B22165C9100768815 /* belcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3D22165C8F00768815 /* belcard.framework */; };
-		3082FA4C22165C9100768815 /* belcard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3D22165C8F00768815 /* belcard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA4D22165C9100768815 /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3E22165C8F00768815 /* ortp.framework */; };
-		3082FA4E22165C9100768815 /* ortp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3E22165C8F00768815 /* ortp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA4F22165C9100768815 /* mscodec2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3F22165C8F00768815 /* mscodec2.framework */; };
-		3082FA5022165C9100768815 /* mscodec2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA3F22165C8F00768815 /* mscodec2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5122165C9100768815 /* msopenh264.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4022165C9000768815 /* msopenh264.framework */; };
-		3082FA5222165C9100768815 /* msopenh264.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4022165C9000768815 /* msopenh264.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5322165C9100768815 /* mssilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4122165C9000768815 /* mssilk.framework */; };
-		3082FA5422165C9100768815 /* mssilk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4122165C9000768815 /* mssilk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5522165C9100768815 /* msx264.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4222165C9000768815 /* msx264.framework */; };
-		3082FA5622165C9100768815 /* msx264.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4222165C9000768815 /* msx264.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5722165C9100768815 /* belr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4322165C9000768815 /* belr.framework */; };
-		3082FA5822165C9100768815 /* belr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4322165C9000768815 /* belr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5922165C9100768815 /* msamr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4422165C9000768815 /* msamr.framework */; };
-		3082FA5A22165C9100768815 /* msamr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4422165C9000768815 /* msamr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5B22165C9100768815 /* bctoolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4522165C9000768815 /* bctoolbox.framework */; };
-		3082FA5C22165C9100768815 /* bctoolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4522165C9000768815 /* bctoolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA5D22165C9100768815 /* mswebrtc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4622165C9100768815 /* mswebrtc.framework */; };
-		3082FA5E22165C9100768815 /* mswebrtc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA4622165C9100768815 /* mswebrtc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3082FA6022165E6B00768815 /* SipUAFramwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA5F22165E6B00768815 /* SipUAFramwork.framework */; };
-		3082FA6122165E6B00768815 /* SipUAFramwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3082FA5F22165E6B00768815 /* SipUAFramwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30972D5A22142A0D00BDE396 /* BMDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972D5422142A0D00BDE396 /* BMDialView.swift */; };
 		30972D5B22142A0D00BDE396 /* Phone Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30972D5522142A0D00BDE396 /* Phone Filled@2x.png */; };
 		30972D5C22142A0D00BDE396 /* PhoneDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30972D5622142A0D00BDE396 /* PhoneDigit.swift */; };
@@ -102,29 +96,57 @@
 		30B698C52215477E005D4F4F /* ExtensionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B698C42215477E005D4F4F /* ExtensionAlert.swift */; };
 		30B698C722154DF2005D4F4F /* eng.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30B698C622154DF2005D4F4F /* eng.strings */; };
 		30B698C922154E0A005D4F4F /* th.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30B698C822154E0A005D4F4F /* th.strings */; };
+		30F5472A2224D7EB002BCECF /* linphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F5471E2224D7E9002BCECF /* linphone.framework */; };
+		30F5472B2224D7EB002BCECF /* linphone.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F5471E2224D7E9002BCECF /* linphone.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F5472C2224D7EB002BCECF /* ortp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F5471F2224D7E9002BCECF /* ortp.framework */; };
+		30F5472D2224D7EB002BCECF /* ortp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F5471F2224D7E9002BCECF /* ortp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F5472E2224D7EB002BCECF /* mswebrtc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547202224D7E9002BCECF /* mswebrtc.framework */; };
+		30F5472F2224D7EB002BCECF /* mswebrtc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547202224D7E9002BCECF /* mswebrtc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547302224D7EB002BCECF /* msx264.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547212224D7EA002BCECF /* msx264.framework */; };
+		30F547312224D7EB002BCECF /* msx264.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547212224D7EA002BCECF /* msx264.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547322224D7EB002BCECF /* belr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547222224D7EA002BCECF /* belr.framework */; };
+		30F547332224D7EB002BCECF /* belr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547222224D7EA002BCECF /* belr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547342224D7EB002BCECF /* msamr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547232224D7EA002BCECF /* msamr.framework */; };
+		30F547352224D7EB002BCECF /* msamr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547232224D7EA002BCECF /* msamr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547362224D7EB002BCECF /* bctoolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547242224D7EA002BCECF /* bctoolbox.framework */; };
+		30F547372224D7EB002BCECF /* bctoolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547242224D7EA002BCECF /* bctoolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547382224D7EB002BCECF /* msopenh264.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547252224D7EA002BCECF /* msopenh264.framework */; };
+		30F547392224D7EB002BCECF /* msopenh264.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547252224D7EA002BCECF /* msopenh264.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F5473A2224D7EB002BCECF /* mssilk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547262224D7EB002BCECF /* mssilk.framework */; };
+		30F5473B2224D7EB002BCECF /* mssilk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547262224D7EB002BCECF /* mssilk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F5473C2224D7EB002BCECF /* mediastreamer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547272224D7EB002BCECF /* mediastreamer2.framework */; };
+		30F5473D2224D7EB002BCECF /* mediastreamer2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547272224D7EB002BCECF /* mediastreamer2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F5473E2224D7EB002BCECF /* belcard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547282224D7EB002BCECF /* belcard.framework */; };
+		30F5473F2224D7EB002BCECF /* belcard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547282224D7EB002BCECF /* belcard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547402224D7EB002BCECF /* mscodec2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547292224D7EB002BCECF /* mscodec2.framework */; };
+		30F547412224D7EB002BCECF /* mscodec2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547292224D7EB002BCECF /* mscodec2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F547432224D7FA002BCECF /* SipUAFramwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547422224D7FA002BCECF /* SipUAFramwork.framework */; };
+		30F547442224D7FA002BCECF /* SipUAFramwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30F547422224D7FA002BCECF /* SipUAFramwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30FA3DA4221A930600B02B95 /* CallKitCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3DA3221A930600B02B95 /* CallKitCallController.swift */; };
+		30FA3DA6221A96AC00B02B95 /* CallKitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3DA5221A96AC00B02B95 /* CallKitProvider.swift */; };
 		839D2F6EF21EBFEAC9D6A677 /* Pods_SipUa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A01A3C5963250A305E44CC /* Pods_SipUa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3082F9BF221653A200768815 /* Embed Frameworks */ = {
+		30F547182224D62F002BCECF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3082FA4A22165C9100768815 /* mediastreamer2.framework in Embed Frameworks */,
-				3082FA4C22165C9100768815 /* belcard.framework in Embed Frameworks */,
-				3082FA4E22165C9100768815 /* ortp.framework in Embed Frameworks */,
-				3082FA5E22165C9100768815 /* mswebrtc.framework in Embed Frameworks */,
-				3082FA5022165C9100768815 /* mscodec2.framework in Embed Frameworks */,
-				3082FA4822165C9100768815 /* linphone.framework in Embed Frameworks */,
-				3082FA5222165C9100768815 /* msopenh264.framework in Embed Frameworks */,
-				3082FA5622165C9100768815 /* msx264.framework in Embed Frameworks */,
-				3082FA6122165E6B00768815 /* SipUAFramwork.framework in Embed Frameworks */,
-				3082FA5A22165C9100768815 /* msamr.framework in Embed Frameworks */,
-				3082FA5422165C9100768815 /* mssilk.framework in Embed Frameworks */,
-				3082FA5822165C9100768815 /* belr.framework in Embed Frameworks */,
-				3082FA5C22165C9100768815 /* bctoolbox.framework in Embed Frameworks */,
+				30F547312224D7EB002BCECF /* msx264.framework in Embed Frameworks */,
+				30F5472B2224D7EB002BCECF /* linphone.framework in Embed Frameworks */,
+				30F5472F2224D7EB002BCECF /* mswebrtc.framework in Embed Frameworks */,
+				30F5473B2224D7EB002BCECF /* mssilk.framework in Embed Frameworks */,
+				30F5472D2224D7EB002BCECF /* ortp.framework in Embed Frameworks */,
+				30F547372224D7EB002BCECF /* bctoolbox.framework in Embed Frameworks */,
+				30F5473F2224D7EB002BCECF /* belcard.framework in Embed Frameworks */,
+				30F547332224D7EB002BCECF /* belr.framework in Embed Frameworks */,
+				30F547442224D7FA002BCECF /* SipUAFramwork.framework in Embed Frameworks */,
+				30F547392224D7EB002BCECF /* msopenh264.framework in Embed Frameworks */,
+				30F547352224D7EB002BCECF /* msamr.framework in Embed Frameworks */,
+				30F547412224D7EB002BCECF /* mscodec2.framework in Embed Frameworks */,
+				30F5473D2224D7EB002BCECF /* mediastreamer2.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,14 +156,36 @@
 /* Begin PBXFileReference section */
 		07A01A3C5963250A305E44CC /* Pods_SipUa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SipUa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A52027143257C14A73F35F1 /* Pods-SipUa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipUa.release.xcconfig"; path = "Pods/Target Support Files/Pods-SipUa/Pods-SipUa.release.xcconfig"; sourceTree = "<group>"; };
+		30157144221CECF300597583 /* CallingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingView.swift; sourceTree = "<group>"; };
+		30157146221CF3CE00597583 /* Calling.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calling.storyboard; sourceTree = "<group>"; };
+		3015714A221D06E800597583 /* IncomingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCall.swift; sourceTree = "<group>"; };
+		3015714C221D072500597583 /* OutgoingCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingCall.swift; sourceTree = "<group>"; };
+		3015714E221D091A00597583 /* IncomingCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingCallView.xib; sourceTree = "<group>"; };
+		30157152221D098400597583 /* OutgoingCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingCallView.xib; sourceTree = "<group>"; };
+		30157155221D31D800597583 /* ConferenceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceCall.swift; sourceTree = "<group>"; };
+		30157157221D31FC00597583 /* ConferenceCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConferenceCallView.xib; sourceTree = "<group>"; };
+		30157159221D326300597583 /* ConferenceCallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceCallCell.swift; sourceTree = "<group>"; };
+		3015715A221D326300597583 /* ConferenceCallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConferenceCallCell.xib; sourceTree = "<group>"; };
+		3015715D221D328C00597583 /* ConferencePauseCallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePauseCallCell.swift; sourceTree = "<group>"; };
+		3015715E221D328C00597583 /* ConferencePauseCallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConferencePauseCallCell.xib; sourceTree = "<group>"; };
+		304972542216C2D4007EEC8E /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
+		304972562216C32C007EEC8E /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
+		304BE65A221EA66200588EAD /* SelectPauseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPauseCell.swift; sourceTree = "<group>"; };
+		304BE65B221EA66200588EAD /* SelectPauseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPauseCell.xib; sourceTree = "<group>"; };
+		304BE65E221EA68700588EAD /* PauseCallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseCallCell.swift; sourceTree = "<group>"; };
+		304BE65F221EA68700588EAD /* PauseCallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseCallCell.xib; sourceTree = "<group>"; };
 		305C7198220C15A4000E1804 /* SipUa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SipUa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305C719B220C15A4000E1804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		305C719D220C15A4000E1804 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		305C719D220C15A4000E1804 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		305C71A0220C15A4000E1804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		305C71A2220C15A6000E1804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		305C71A5220C15A6000E1804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		305C71A7220C15A6000E1804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		307EF84A221114D600FA4075 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		307B03432223920D00C9FECE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		307B03452223C44D00C9FECE /* SipUa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SipUa-Bridging-Header.h"; sourceTree = "<group>"; };
+		307B03462223C45500C9FECE /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		307B03472223C45800C9FECE /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		307B03482223C45A00C9FECE /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooninSlideInHandler.swift; sourceTree = "<group>"; };
 		307EF84E2211699D00FA4075 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		307EF85022126B8A00FA4075 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -185,19 +229,6 @@
 		3082FA2D22165B2C00768815 /* rootca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = rootca.pem; path = Resources/rootca.pem; sourceTree = "<group>"; };
 		3082FA2E22165B2C00768815 /* ringchat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ringchat.wav; path = Resources/ringchat.wav; sourceTree = "<group>"; };
 		3082FA2F22165B2C00768815 /* ringback.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ringback.wav; path = Resources/ringback.wav; sourceTree = "<group>"; };
-		3082FA3B22165C8F00768815 /* linphone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = linphone.framework; path = liblinphone/Frameworks/linphone.framework; sourceTree = "<group>"; };
-		3082FA3C22165C8F00768815 /* mediastreamer2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediastreamer2.framework; path = liblinphone/Frameworks/mediastreamer2.framework; sourceTree = "<group>"; };
-		3082FA3D22165C8F00768815 /* belcard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = belcard.framework; path = liblinphone/Frameworks/belcard.framework; sourceTree = "<group>"; };
-		3082FA3E22165C8F00768815 /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ortp.framework; path = liblinphone/Frameworks/ortp.framework; sourceTree = "<group>"; };
-		3082FA3F22165C8F00768815 /* mscodec2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mscodec2.framework; path = liblinphone/Frameworks/mscodec2.framework; sourceTree = "<group>"; };
-		3082FA4022165C9000768815 /* msopenh264.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msopenh264.framework; path = liblinphone/Frameworks/msopenh264.framework; sourceTree = "<group>"; };
-		3082FA4122165C9000768815 /* mssilk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mssilk.framework; path = liblinphone/Frameworks/mssilk.framework; sourceTree = "<group>"; };
-		3082FA4222165C9000768815 /* msx264.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msx264.framework; path = liblinphone/Frameworks/msx264.framework; sourceTree = "<group>"; };
-		3082FA4322165C9000768815 /* belr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = belr.framework; path = liblinphone/Frameworks/belr.framework; sourceTree = "<group>"; };
-		3082FA4422165C9000768815 /* msamr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msamr.framework; path = liblinphone/Frameworks/msamr.framework; sourceTree = "<group>"; };
-		3082FA4522165C9000768815 /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bctoolbox.framework; path = liblinphone/Frameworks/bctoolbox.framework; sourceTree = "<group>"; };
-		3082FA4622165C9100768815 /* mswebrtc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mswebrtc.framework; path = liblinphone/Frameworks/mswebrtc.framework; sourceTree = "<group>"; };
-		3082FA5F22165E6B00768815 /* SipUAFramwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipUAFramwork.framework; path = libsipua/SipUAFramwork.framework; sourceTree = "<group>"; };
 		30972D5422142A0D00BDE396 /* BMDialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMDialView.swift; sourceTree = "<group>"; };
 		30972D5522142A0D00BDE396 /* Phone Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone Filled@2x.png"; sourceTree = "<group>"; };
 		30972D5622142A0D00BDE396 /* PhoneDigit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneDigit.swift; sourceTree = "<group>"; };
@@ -218,6 +249,21 @@
 		30B698C42215477E005D4F4F /* ExtensionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlert.swift; sourceTree = "<group>"; };
 		30B698C622154DF2005D4F4F /* eng.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = eng.strings; sourceTree = "<group>"; };
 		30B698C822154E0A005D4F4F /* th.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = th.strings; sourceTree = "<group>"; };
+		30F5471E2224D7E9002BCECF /* linphone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = linphone.framework; path = liblinphone/Frameworks/linphone.framework; sourceTree = "<group>"; };
+		30F5471F2224D7E9002BCECF /* ortp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ortp.framework; path = liblinphone/Frameworks/ortp.framework; sourceTree = "<group>"; };
+		30F547202224D7E9002BCECF /* mswebrtc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mswebrtc.framework; path = liblinphone/Frameworks/mswebrtc.framework; sourceTree = "<group>"; };
+		30F547212224D7EA002BCECF /* msx264.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msx264.framework; path = liblinphone/Frameworks/msx264.framework; sourceTree = "<group>"; };
+		30F547222224D7EA002BCECF /* belr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = belr.framework; path = liblinphone/Frameworks/belr.framework; sourceTree = "<group>"; };
+		30F547232224D7EA002BCECF /* msamr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msamr.framework; path = liblinphone/Frameworks/msamr.framework; sourceTree = "<group>"; };
+		30F547242224D7EA002BCECF /* bctoolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bctoolbox.framework; path = liblinphone/Frameworks/bctoolbox.framework; sourceTree = "<group>"; };
+		30F547252224D7EA002BCECF /* msopenh264.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = msopenh264.framework; path = liblinphone/Frameworks/msopenh264.framework; sourceTree = "<group>"; };
+		30F547262224D7EB002BCECF /* mssilk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mssilk.framework; path = liblinphone/Frameworks/mssilk.framework; sourceTree = "<group>"; };
+		30F547272224D7EB002BCECF /* mediastreamer2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediastreamer2.framework; path = liblinphone/Frameworks/mediastreamer2.framework; sourceTree = "<group>"; };
+		30F547282224D7EB002BCECF /* belcard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = belcard.framework; path = liblinphone/Frameworks/belcard.framework; sourceTree = "<group>"; };
+		30F547292224D7EB002BCECF /* mscodec2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mscodec2.framework; path = liblinphone/Frameworks/mscodec2.framework; sourceTree = "<group>"; };
+		30F547422224D7FA002BCECF /* SipUAFramwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipUAFramwork.framework; path = libsipua/SipUAFramwork.framework; sourceTree = "<group>"; };
+		30FA3DA3221A930600B02B95 /* CallKitCallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitCallController.swift; sourceTree = "<group>"; };
+		30FA3DA5221A96AC00B02B95 /* CallKitProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitProvider.swift; sourceTree = "<group>"; };
 		CFEA737A5FEE359835B82894 /* Pods-SipUa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipUa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SipUa/Pods-SipUa.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,74 +272,118 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F5473E2224D7EB002BCECF /* belcard.framework in Frameworks */,
 				3082FA24221659B800768815 /* Photos.framework in Frameworks */,
 				3082FA22221659AF00768815 /* Contacts.framework in Frameworks */,
+				30F547342224D7EB002BCECF /* msamr.framework in Frameworks */,
+				30F547402224D7EB002BCECF /* mscodec2.framework in Frameworks */,
+				30F547382224D7EB002BCECF /* msopenh264.framework in Frameworks */,
 				3082FA20221659A400768815 /* UserNotifications.framework in Frameworks */,
 				3082FA1E2216599B00768815 /* UIKit.framework in Frameworks */,
 				3082FA1C2216599500768815 /* StoreKit.framework in Frameworks */,
+				30F5472C2224D7EB002BCECF /* ortp.framework in Frameworks */,
+				30F5473C2224D7EB002BCECF /* mediastreamer2.framework in Frameworks */,
 				3082FA1A2216598500768815 /* CallKit.framework in Frameworks */,
 				3082FA182216597600768815 /* PushKit.framework in Frameworks */,
 				3082FA142216595E00768815 /* CoreVideo.framework in Frameworks */,
 				3082FA152216595E00768815 /* CoreAudio.framework in Frameworks */,
 				3082FA162216595E00768815 /* CoreTelephony.framework in Frameworks */,
 				3082FA102216594100768815 /* CoreGraphics.framework in Frameworks */,
-				3082FA4D22165C9100768815 /* ortp.framework in Frameworks */,
+				30F5472A2224D7EB002BCECF /* linphone.framework in Frameworks */,
 				3082FA0E2216593800768815 /* CoreMedia.framework in Frameworks */,
 				3082FA0C2216591800768815 /* QuartzCore.framework in Frameworks */,
 				3082FA0A2216590A00768815 /* MobileCoreServices.framework in Frameworks */,
-				3082FA5322165C9100768815 /* mssilk.framework in Frameworks */,
-				3082FA4B22165C9100768815 /* belcard.framework in Frameworks */,
-				3082FA5D22165C9100768815 /* mswebrtc.framework in Frameworks */,
 				3082FA082216590300768815 /* AudioToolbox.framework in Frameworks */,
+				30F547302224D7EB002BCECF /* msx264.framework in Frameworks */,
+				30F547362224D7EB002BCECF /* bctoolbox.framework in Frameworks */,
 				3082FA06221658F000768815 /* VideoToolbox.framework in Frameworks */,
-				3082FA5722165C9100768815 /* belr.framework in Frameworks */,
+				30F547322224D7EB002BCECF /* belr.framework in Frameworks */,
 				3082FA04221658E500768815 /* AssetsLibrary.framework in Frameworks */,
+				30F5472E2224D7EB002BCECF /* mswebrtc.framework in Frameworks */,
 				3082FA01221658D400768815 /* Foundation.framework in Frameworks */,
-				3082FA4F22165C9100768815 /* mscodec2.framework in Frameworks */,
-				3082FA4722165C9100768815 /* linphone.framework in Frameworks */,
 				3082FA02221658D400768815 /* AVFoundation.framework in Frameworks */,
 				3082F9FE221658C300768815 /* CFNetwork.framework in Frameworks */,
 				3082F9FC221658B700768815 /* MediaPlayer.framework in Frameworks */,
 				3082F9FA221658AB00768815 /* MessageUI.framework in Frameworks */,
-				3082FA4922165C9100768815 /* mediastreamer2.framework in Frameworks */,
 				3082F9F8221658A200768815 /* OpenGLES.framework in Frameworks */,
+				30F5473A2224D7EB002BCECF /* mssilk.framework in Frameworks */,
 				3082F9F62216589A00768815 /* SystemConfiguration.framework in Frameworks */,
 				3082F9F42216589100768815 /* libsqlite3.tbd in Frameworks */,
 				3082F9F22216588200768815 /* libxml2.tbd in Frameworks */,
-				3082FA5522165C9100768815 /* msx264.framework in Frameworks */,
 				3082F9F02216587600768815 /* libiconv.tbd in Frameworks */,
 				3082F9EE2216586300768815 /* libc++.1.tbd in Frameworks */,
-				3082FA5B22165C9100768815 /* bctoolbox.framework in Frameworks */,
 				3082F9EC2216585500768815 /* libz.tbd in Frameworks */,
-				3082FA5122165C9100768815 /* msopenh264.framework in Frameworks */,
 				3082F9EA2216584100768815 /* libresolv.tbd in Frameworks */,
+				30F547432224D7FA002BCECF /* SipUAFramwork.framework in Frameworks */,
 				839D2F6EF21EBFEAC9D6A677 /* Pods_SipUa.framework in Frameworks */,
-				3082FA6022165E6B00768815 /* SipUAFramwork.framework in Frameworks */,
-				3082FA5922165C9100768815 /* msamr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30157143221CECCD00597583 /* CallingView */ = {
+			isa = PBXGroup;
+			children = (
+				30157144221CECF300597583 /* CallingView.swift */,
+				304BE659221EA61100588EAD /* Pause and Select */,
+				30157148221D069500597583 /* IncomingAndOutgoing */,
+				30157154221D306E00597583 /* ConferenceCall */,
+			);
+			name = CallingView;
+			sourceTree = "<group>";
+		};
+		30157148221D069500597583 /* IncomingAndOutgoing */ = {
+			isa = PBXGroup;
+			children = (
+				3015714A221D06E800597583 /* IncomingCall.swift */,
+				3015714E221D091A00597583 /* IncomingCallView.xib */,
+				3015714C221D072500597583 /* OutgoingCall.swift */,
+				30157152221D098400597583 /* OutgoingCallView.xib */,
+			);
+			name = IncomingAndOutgoing;
+			sourceTree = "<group>";
+		};
+		30157154221D306E00597583 /* ConferenceCall */ = {
+			isa = PBXGroup;
+			children = (
+				30157155221D31D800597583 /* ConferenceCall.swift */,
+				30157157221D31FC00597583 /* ConferenceCallView.xib */,
+				30157159221D326300597583 /* ConferenceCallCell.swift */,
+				3015715A221D326300597583 /* ConferenceCallCell.xib */,
+				3015715D221D328C00597583 /* ConferencePauseCallCell.swift */,
+				3015715E221D328C00597583 /* ConferencePauseCallCell.xib */,
+			);
+			name = ConferenceCall;
+			sourceTree = "<group>";
+		};
+		304BE659221EA61100588EAD /* Pause and Select */ = {
+			isa = PBXGroup;
+			children = (
+				304BE65A221EA66200588EAD /* SelectPauseCell.swift */,
+				304BE65B221EA66200588EAD /* SelectPauseCell.xib */,
+				304BE65E221EA68700588EAD /* PauseCallCell.swift */,
+				304BE65F221EA68700588EAD /* PauseCallCell.xib */,
+			);
+			name = "Pause and Select";
+			sourceTree = "<group>";
+		};
 		305C718F220C15A4000E1804 = {
 			isa = PBXGroup;
 			children = (
-				3082FA5F22165E6B00768815 /* SipUAFramwork.framework */,
-				3082FA4522165C9000768815 /* bctoolbox.framework */,
-				3082FA3D22165C8F00768815 /* belcard.framework */,
-				3082FA4322165C9000768815 /* belr.framework */,
-				3082FA3B22165C8F00768815 /* linphone.framework */,
-				3082FA3C22165C8F00768815 /* mediastreamer2.framework */,
-				3082FA4422165C9000768815 /* msamr.framework */,
-				3082FA3F22165C8F00768815 /* mscodec2.framework */,
-				3082FA4022165C9000768815 /* msopenh264.framework */,
-				3082FA4122165C9000768815 /* mssilk.framework */,
-				3082FA4622165C9100768815 /* mswebrtc.framework */,
-				3082FA4222165C9000768815 /* msx264.framework */,
-				3082FA3E22165C8F00768815 /* ortp.framework */,
-				3082FA3A22165B4900768815 /* libsipua */,
-				3082F99A2216537500768815 /* liblinphon */,
+				30F547422224D7FA002BCECF /* SipUAFramwork.framework */,
+				30F547242224D7EA002BCECF /* bctoolbox.framework */,
+				30F547282224D7EB002BCECF /* belcard.framework */,
+				30F547222224D7EA002BCECF /* belr.framework */,
+				30F5471E2224D7E9002BCECF /* linphone.framework */,
+				30F547272224D7EB002BCECF /* mediastreamer2.framework */,
+				30F547232224D7EA002BCECF /* msamr.framework */,
+				30F547292224D7EB002BCECF /* mscodec2.framework */,
+				30F547252224D7EA002BCECF /* msopenh264.framework */,
+				30F547262224D7EB002BCECF /* mssilk.framework */,
+				30F547202224D7E9002BCECF /* mswebrtc.framework */,
+				30F547212224D7EA002BCECF /* msx264.framework */,
+				30F5471F2224D7E9002BCECF /* ortp.framework */,
 				30972D52221429CF00BDE396 /* Lib */,
 				305C719A220C15A4000E1804 /* SipUa */,
 				305C7199220C15A4000E1804 /* Products */,
@@ -314,12 +404,11 @@
 		305C719A220C15A4000E1804 /* SipUa */ = {
 			isa = PBXGroup;
 			children = (
+				30FA3DA2221A92D400B02B95 /* CallKit */,
 				30B698B922150B12005D4F4F /* Extensions */,
 				30972D68221430CB00BDE396 /* ViewControllers */,
 				30972D642214308D00BDE396 /* StoryBoards */,
 				305C719B220C15A4000E1804 /* AppDelegate.swift */,
-				305C719D220C15A4000E1804 /* ViewController.swift */,
-				307EF84A221114D600FA4075 /* HomeVC.swift */,
 				307EF84C22111D3100FA4075 /* SooninSlideInHandler.swift */,
 				307EF85022126B8A00FA4075 /* EditProfileVC.swift */,
 				307EF84E2211699D00FA4075 /* SidebarView.swift */,
@@ -332,23 +421,20 @@
 			path = SipUa;
 			sourceTree = "<group>";
 		};
-		3082F9992216524D00768815 /* Log */ = {
+		3082F9992216524D00768815 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				305C719D220C15A4000E1804 /* RegisterView.swift */,
 			);
-			name = Log;
-			sourceTree = "<group>";
-		};
-		3082F99A2216537500768815 /* liblinphon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = liblinphon;
+			name = Login;
 			sourceTree = "<group>";
 		};
 		3082FA2522165AFD00768815 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				307B03462223C45500C9FECE /* ProgressHUD.bundle */,
+				307B03472223C45800C9FECE /* ProgressHUD.h */,
+				307B03482223C45A00C9FECE /* ProgressHUD.m */,
 				3082FA2A22165B2C00768815 /* default_ringtone.wav */,
 				3082FA2C22165B2C00768815 /* linphonerc */,
 				3082FA2822165B2C00768815 /* linphonerc-factory */,
@@ -359,16 +445,9 @@
 				3082FA2922165B2C00768815 /* ringhold.wav */,
 				3082FA2B22165B2C00768815 /* ringtone.wav */,
 				3082FA2D22165B2C00768815 /* rootca.pem */,
+				307B03452223C44D00C9FECE /* SipUa-Bridging-Header.h */,
 			);
 			name = Resource;
-			sourceTree = "<group>";
-		};
-		3082FA3A22165B4900768815 /* libsipua */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = libsipua;
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		30972D52221429CF00BDE396 /* Lib */ = {
@@ -392,12 +471,12 @@
 			path = PhonePad;
 			sourceTree = "<group>";
 		};
-		30972D6022142E7900BDE396 /* Mian */ = {
+		30972D6022142E7900BDE396 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				30972D6122142E9600BDE396 /* MainHomeVC.swift */,
 			);
-			path = Mian;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		30972D632214307800BDE396 /* Contract */ = {
@@ -415,6 +494,7 @@
 				30972D65221430B600BDE396 /* Contracts.storyboard */,
 				30B698B52214FF46005D4F4F /* History.storyboard */,
 				30B698B72214FF6F005D4F4F /* PhonPad.storyboard */,
+				30157146221CF3CE00597583 /* Calling.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -429,13 +509,15 @@
 		30972D68221430CB00BDE396 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3082F9992216524D00768815 /* Log */,
+				30157143221CECCD00597583 /* CallingView */,
+				3082F9992216524D00768815 /* Login */,
 				30B698BD22150D61005D4F4F /* BaseVC */,
 				30B698AE2214FC39005D4F4F /* History */,
 				30B698AD2214FC28005D4F4F /* PhonPad */,
 				30B698AC2214FC16005D4F4F /* Contact */,
-				30972D6022142E7900BDE396 /* Mian */,
+				30972D6022142E7900BDE396 /* Main */,
 				30972D632214307800BDE396 /* Contract */,
+				307B03432223920D00C9FECE /* User.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +550,8 @@
 			isa = PBXGroup;
 			children = (
 				30B698BA22150B47005D4F4F /* ExtenUIviewController.swift */,
+				304972562216C32C007EEC8E /* ExtensionUIImage.swift */,
+				304972542216C2D4007EEC8E /* ExtensionUIButton.swift */,
 				30B698C0221511EB005D4F4F /* ExtenUIFont.swift */,
 				30B698C222151380005D4F4F /* EXtenUIColor.swift */,
 				30B698C42215477E005D4F4F /* ExtensionAlert.swift */,
@@ -481,6 +565,15 @@
 				30B698BE22150D77005D4F4F /* BaseVC.swift */,
 			);
 			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		30FA3DA2221A92D400B02B95 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				30FA3DA3221A930600B02B95 /* CallKitCallController.swift */,
+				30FA3DA5221A96AC00B02B95 /* CallKitProvider.swift */,
+			);
+			path = CallKit;
 			sourceTree = "<group>";
 		};
 		321C26F7FA345596DE5F2DEB /* Pods */ = {
@@ -542,7 +635,7 @@
 				305C7195220C15A4000E1804 /* Frameworks */,
 				305C7196220C15A4000E1804 /* Resources */,
 				068CBA77EDFD527CEC8B07BE /* [CP] Embed Pods Frameworks */,
-				3082F9BF221653A200768815 /* Embed Frameworks */,
+				30F547182224D62F002BCECF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -565,6 +658,7 @@
 				TargetAttributes = {
 					305C7197220C15A4000E1804 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -591,10 +685,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30157153221D098400597583 /* OutgoingCallView.xib in Resources */,
+				3015714F221D091A00597583 /* IncomingCallView.xib in Resources */,
+				30157160221D328C00597583 /* ConferencePauseCallCell.xib in Resources */,
 				305C71A6220C15A6000E1804 /* LaunchScreen.storyboard in Resources */,
+				3015715C221D326300597583 /* ConferenceCallCell.xib in Resources */,
 				305C71A3220C15A6000E1804 /* Assets.xcassets in Resources */,
 				3082FA3522165B2C00768815 /* ringtone.wav in Resources */,
 				30972D5B22142A0D00BDE396 /* Phone Filled@2x.png in Resources */,
+				30157158221D31FC00597583 /* ConferenceCallView.xib in Resources */,
 				3082FA3222165B2C00768815 /* linphonerc-factory in Resources */,
 				30972D5E22142A0D00BDE396 /* Phone Filled@3x.png in Resources */,
 				30B698C722154DF2005D4F4F /* eng.strings in Resources */,
@@ -604,10 +703,14 @@
 				3082FA3722165B2C00768815 /* rootca.pem in Resources */,
 				30B698B82214FF6F005D4F4F /* PhonPad.storyboard in Resources */,
 				3082FA3122165B2C00768815 /* no_video.jpg in Resources */,
+				304BE661221EA68700588EAD /* PauseCallCell.xib in Resources */,
 				305C71A1220C15A4000E1804 /* Main.storyboard in Resources */,
+				30157147221CF3CE00597583 /* Calling.storyboard in Resources */,
+				304BE65D221EA66200588EAD /* SelectPauseCell.xib in Resources */,
 				3082FA3422165B2C00768815 /* default_ringtone.wav in Resources */,
 				3082FA3922165B2C00768815 /* ringback.wav in Resources */,
 				3082FA3822165B2C00768815 /* ringchat.wav in Resources */,
+				307B03492223C45A00C9FECE /* ProgressHUD.bundle in Resources */,
 				30972D5F22142A0D00BDE396 /* Backspace@3x.png in Resources */,
 				30972D5D22142A0D00BDE396 /* Backspace@2x.png in Resources */,
 				30B698C922154E0A005D4F4F /* th.strings in Resources */,
@@ -630,6 +733,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SipUa/Pods-SipUa-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/JAPagerViewController/JAPagerViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -637,6 +741,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JAPagerViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -674,21 +779,34 @@
 			files = (
 				30B698B22214FE18005D4F4F /* PhonPadVC.swift in Sources */,
 				30B698B42214FE3E005D4F4F /* HistoryVC.swift in Sources */,
-				307EF84B221114D600FA4075 /* HomeVC.swift in Sources */,
+				30FA3DA4221A930600B02B95 /* CallKitCallController.swift in Sources */,
+				30157156221D31D800597583 /* ConferenceCall.swift in Sources */,
+				304BE660221EA68700588EAD /* PauseCallCell.swift in Sources */,
 				307EF84D22111D3100FA4075 /* SooninSlideInHandler.swift in Sources */,
 				307EF84F2211699D00FA4075 /* SidebarView.swift in Sources */,
+				304972552216C2D4007EEC8E /* ExtensionUIButton.swift in Sources */,
+				307B03442223920E00C9FECE /* User.swift in Sources */,
 				30B698C52215477E005D4F4F /* ExtensionAlert.swift in Sources */,
 				30B698C1221511EB005D4F4F /* ExtenUIFont.swift in Sources */,
 				30B698BF22150D77005D4F4F /* BaseVC.swift in Sources */,
-				305C719E220C15A4000E1804 /* ViewController.swift in Sources */,
+				307B034A2223C45A00C9FECE /* ProgressHUD.m in Sources */,
+				305C719E220C15A4000E1804 /* RegisterView.swift in Sources */,
 				30972D5A22142A0D00BDE396 /* BMDialView.swift in Sources */,
 				307EF85122126B8A00FA4075 /* EditProfileVC.swift in Sources */,
 				30972D5C22142A0D00BDE396 /* PhoneDigit.swift in Sources */,
+				3015715F221D328C00597583 /* ConferencePauseCallCell.swift in Sources */,
+				304972572216C32C007EEC8E /* ExtensionUIImage.swift in Sources */,
 				30972D6222142E9600BDE396 /* MainHomeVC.swift in Sources */,
+				3015714B221D06E800597583 /* IncomingCall.swift in Sources */,
+				3015714D221D072500597583 /* OutgoingCall.swift in Sources */,
+				304BE65C221EA66200588EAD /* SelectPauseCell.swift in Sources */,
+				30157145221CECF300597583 /* CallingView.swift in Sources */,
 				305C719C220C15A4000E1804 /* AppDelegate.swift in Sources */,
+				3015715B221D326300597583 /* ConferenceCallCell.swift in Sources */,
 				30B698B02214FE00005D4F4F /* ContactVC.swift in Sources */,
 				30B698C322151380005D4F4F /* EXtenUIColor.swift in Sources */,
 				30B698BB22150B47005D4F4F /* ExtenUIviewController.swift in Sources */,
+				30FA3DA6221A96AC00B02B95 /* CallKitProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +953,7 @@
 			baseConfigurationReference = CFEA737A5FEE359835B82894 /* Pods-SipUa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7U3NLGK3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -849,9 +968,11 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/liblinphone/lib";
-				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.SipUa;
+				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LinphoneModule";
+				SWIFT_OBJC_BRIDGING_HEADER = "SipUa-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/liblinphone/include";
@@ -863,6 +984,7 @@
 			baseConfigurationReference = 2A52027143257C14A73F35F1 /* Pods-SipUa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7U3NLGK3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -877,9 +999,10 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/liblinphone/lib";
-				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.SipUa;
+				PRODUCT_BUNDLE_IDENTIFIER = nldevios.com.testApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/LinphoneModule";
+				SWIFT_OBJC_BRIDGING_HEADER = "SipUa-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/liblinphone/include";

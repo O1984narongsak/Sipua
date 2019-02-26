@@ -7,19 +7,34 @@
 //
 
 import UIKit
+import SipUAFramwork
+import LinphoneModule
 
 class BaseVC: UIViewController {
 
     //TODO: - slide menu
     var sidebarView: SidebarView!
     var blackScreen: UIView!
-
     
+    // To temporary collect a user to enable register
+    var currentUser: OpaquePointer?
+    
+    /* username pass */
+    var usernameL: String?
+    var passL: String?
+    var userId: String?
+    var password: String?
+    var domain: String?
+    var port: Int?
+    var destination: String?
+    var transport: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+
     
     func addHamberBar() {
         self.navigationController?.isNavigationBarHidden = false
@@ -99,7 +114,6 @@ extension BaseVC : SidebarViewDelegate {
     }
     
     func sidebarDidSelectRow(row: Row) {
-        print("row: \(row)")
         blackScreen.isHidden = true
         blackScreen.frame = self.view.bounds
         UIView.animate(withDuration: 0.3){
@@ -117,11 +131,41 @@ extension BaseVC : SidebarViewDelegate {
         case.general_Setting:
             presentAlert(withTitle: "Logout", message: "")
         case .home:
-            presentAlert(withTitle: "Logout", message: "")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainNav")
+            self.present(vc, animated: true, completion: nil)
         case .logout:
-            presentAlert(withTitle: "Logout", message: "")
+            showSimpleAlert()
         case .none:
             break
         }
+    }
+    
+    func showSimpleAlert() {
+        let alert = UIAlertController(title: "Do you want to Logout?", message: "",         preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            //Cancel Action
+        }))
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                        self.logout()
+                                        
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func logout()  {
+         currentUser = nil
+         deleteUserConfig()
+//        if let storyboard = self.storyboard {
+//            let vc = storyboard.instantiateViewController(withIdentifier: "RegisterView")
+//            self.present(vc, animated: false, completion: nil)
+//        }
+    }
+    
+    func deleteUserConfig(){
+        sipUAManager.removeConfigAndAuthInfo(config: currentUser!)
     }
 }

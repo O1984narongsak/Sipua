@@ -144,7 +144,7 @@ class BMDialView: UIView, UITextFieldDelegate {
     
     @objc private func backspaceTapped(btn: UIButton) {
         let color = textField?.tintColor
-        textField?.text = ""
+//        textField?.text = ""
         
         delete()
         if(textField?.text?.isEmpty)!{
@@ -153,7 +153,7 @@ class BMDialView: UIView, UITextFieldDelegate {
 //            textField?.textColor = UIColor.lightGray
         }
         else {
-            textField?.text = nil
+//            textField?.text = nil
             textField?.textColor = UIColor.custom_black
             textField?.tintColor = color
         }

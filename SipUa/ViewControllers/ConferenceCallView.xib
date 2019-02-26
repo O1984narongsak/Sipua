@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="ConferenceCallID" id="iN0-l3-epB" customClass="ConferenceCall" customModule="SipUa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsU-JD-VFt">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <items>
+                        <navigationItem title="SipUA" id="8ie-7A-sW8"/>
+                    </items>
+                </navigationBar>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="UCg-Lc-0hh">
+                    <rect key="frame" x="16" y="72" width="343" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLA-uj-exg">
+                            <rect key="frame" x="0.0" y="0.0" width="60.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="xBv-KA-6m5"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENL-5b-eas">
+                            <rect key="frame" x="94.5" y="0.0" width="60" height="44"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkw-Rh-Wo4">
+                            <rect key="frame" x="188.5" y="0.0" width="60.5" height="44"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cza-et-GcP">
+                            <rect key="frame" x="283" y="0.0" width="60" height="44"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMS-ay-KTG">
+                    <rect key="frame" x="16" y="312" width="343" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HQn-j3-Xbz">
+                    <rect key="frame" x="16" y="124" width="343" height="180"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="MjI-F2-Ije"/>
+                    </constraints>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="weQ-6J-qCf">
+                    <rect key="frame" x="16" y="350" width="343" height="180"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="yuS-FI-nlc"/>
+                    </constraints>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-Vq-SJc">
+                    <rect key="frame" x="16" y="538" width="343" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WsU-JD-VFt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="2xt-xC-aNl"/>
+                <constraint firstItem="SMS-ay-KTG" firstAttribute="top" secondItem="HQn-j3-Xbz" secondAttribute="bottom" constant="8" id="852-86-Xxt"/>
+                <constraint firstAttribute="trailing" secondItem="1gI-Vq-SJc" secondAttribute="trailing" constant="16" id="B4a-cv-C4l"/>
+                <constraint firstItem="1gI-Vq-SJc" firstAttribute="top" secondItem="weQ-6J-qCf" secondAttribute="bottom" constant="8" id="DQY-Nc-yvD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SMS-ay-KTG" secondAttribute="trailing" constant="16" id="GIj-KJ-TGh"/>
+                <constraint firstItem="HQn-j3-Xbz" firstAttribute="top" secondItem="UCg-Lc-0hh" secondAttribute="bottom" constant="8" id="IOr-uf-Db7"/>
+                <constraint firstItem="WsU-JD-VFt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NuB-zS-YzS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UCg-Lc-0hh" secondAttribute="trailing" constant="16" id="QbZ-CJ-Y8w"/>
+                <constraint firstItem="SMS-ay-KTG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Udb-4c-lkZ"/>
+                <constraint firstItem="weQ-6J-qCf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="W1o-fX-QDZ"/>
+                <constraint firstAttribute="trailing" secondItem="WsU-JD-VFt" secondAttribute="trailing" id="XNk-QQ-0Lh"/>
+                <constraint firstItem="weQ-6J-qCf" firstAttribute="top" secondItem="SMS-ay-KTG" secondAttribute="bottom" constant="8" id="Ybv-Sh-KIB"/>
+                <constraint firstItem="UCg-Lc-0hh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="eaN-Y9-pPm"/>
+                <constraint firstItem="UCg-Lc-0hh" firstAttribute="top" secondItem="WsU-JD-VFt" secondAttribute="bottom" constant="8" id="enL-97-xgd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="weQ-6J-qCf" secondAttribute="trailing" constant="16" id="gGM-N8-Y6j"/>
+                <constraint firstItem="HQn-j3-Xbz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="o4p-Ge-TgF"/>
+                <constraint firstItem="1gI-Vq-SJc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ohP-EJ-hxk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HQn-j3-Xbz" secondAttribute="trailing" constant="16" id="yzn-Zx-4hh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="conferenceCallNavigationItem" destination="WsU-JD-VFt" id="KRo-aq-Gpp"/>
+                <outlet property="conferenceCallTable" destination="HQn-j3-Xbz" id="r0v-tS-E3g"/>
+                <outlet property="microphonBtn" destination="zkw-Rh-Wo4" id="9PQ-bU-F9J"/>
+                <outlet property="newCallBtn" destination="XLA-uj-exg" id="9kl-Rl-Swe"/>
+                <outlet property="pauseCallBtn" destination="ENL-5b-eas" id="C0M-8A-JBK"/>
+                <outlet property="pauseCallTable" destination="weQ-6J-qCf" id="kQF-BL-HBf"/>
+                <outlet property="speakerBtn" destination="cza-et-GcP" id="OuO-wi-q3Z"/>
+            </connections>
+            <point key="canvasLocation" x="-186" y="64"/>
+        </view>
+    </objects>
+</document>
