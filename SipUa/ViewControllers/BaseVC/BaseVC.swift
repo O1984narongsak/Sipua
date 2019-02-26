@@ -28,9 +28,12 @@ class BaseVC: UIViewController {
     var port: Int?
     var destination: String?
     var transport: String?
+    
+    // Use to check outgoing call audio/video
+    var isVideoCall: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        domain = 
         // Do any additional setup after loading the view.
     }
     
@@ -159,6 +162,7 @@ extension BaseVC : SidebarViewDelegate {
     func logout()  {
          currentUser = nil
          deleteUserConfig()
+        print("log out")
 //        if let storyboard = self.storyboard {
 //            let vc = storyboard.instantiateViewController(withIdentifier: "RegisterView")
 //            self.present(vc, animated: false, completion: nil)

@@ -96,3 +96,88 @@ extension UIView {
         }
     }
 }
+
+/* Create extension for Notification name */
+extension Notification.Name {
+    public static let appUpdateUI = Notification.Name("UpdateUI")
+}
+
+class RightLeftTransition: NSObject {
+    
+    // Duration
+    var duration = 0.5
+    
+    // Mode
+    enum SlideTransitionMode {
+        case present, dismiss
+    }
+    
+    // Default mode
+    var transitionMode: SlideTransitionMode = .present
+    
+}
+
+extension RightLeftTransition: UIViewControllerAnimatedTransitioning {
+    
+    /* Duration function */
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return duration
+    }
+    
+    /* Animation function */
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        // Create container view that act as a superview that involve in the transition
+        let containerView = transitionContext.containerView
+        // Get the view that we're going to present in the transition
+        let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
+        // Get the view that we're going to dismiss in the transition
+        let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
+        // Create cg transform with x direction only
+        let offScreenRight = CGAffineTransform(translationX: containerView.frame.width, y: 0)
+        let offScreenLeft = CGAffineTransform(translationX: -containerView.frame.width, y: 0)
+        // If mode is present
+        if transitionMode == .present  {
+            
+            // Set position the presented view to off screen right
+            toView.transform = offScreenRight
+            // Add the presented view and the dismiss view to the view container
+            containerView.addSubview(toView)
+            containerView.addSubview(fromView)
+            
+            // Start animation with spint animation
+            UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, animations: {
+                // Set position the dismiss view to off screen left
+                fromView.transform = offScreenLeft
+                // Set position the presented view to in screen
+                toView.transform = CGAffineTransform.identity
+            }) { (success: Bool) in
+                // Telling the delegate that transition is complete
+                // Delegate will call function at UI
+                transitionContext.completeTransition(true)
+            }
+            // If mode is dismiss
+        } else {
+            
+            // Set position the presented view to off screen left
+            toView.transform = offScreenLeft
+            // Add the presented view and the dismiss view to the view container
+            containerView.addSubview(toView)
+            containerView.addSubview(fromView)
+            
+            // Start animation with spint animation
+            UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, animations: {
+                // Set position the dismiss view to off screen right
+                fromView.transform = offScreenRight
+                // Set position the presented view to in screen
+                toView.transform = CGAffineTransform.identity
+            }) { (success: Bool) in
+                // Telling the delegate that transition is complete
+                // Delegate will call function at UI
+                transitionContext.completeTransition(true)
+            }
+            
+        }
+        
+    }
+    
+}

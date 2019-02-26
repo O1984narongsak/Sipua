@@ -13,7 +13,7 @@ import LinphoneModule
 import CoreTelephony
 
 class RegisterView: UIViewController, UITextFieldDelegate  {
-
+    
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var oRemember: UIButton!
@@ -73,7 +73,7 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
         
         setupView()
         debug()
-
+        
     }
     
     func setupView() {
@@ -126,7 +126,7 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
         super.viewWillAppear(animated)
         
         // Update status bar
-//        setNeedsStatusBarAppearanceUpdate()
+        //        setNeedsStatusBarAppearanceUpdate()
         
         //hide keyboard when tap outside
         hideKeyboardWhenTappedAround()
@@ -134,7 +134,6 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
         usernameTxt.delegate = self
         passTxt.delegate = self
         
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -165,70 +164,70 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
     @objc func pressPass(textField: UITextField){
         isPressPS = !isPressPS
         
-            if isPressPS{
-                self.oULPass.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
-                self.oULPN.layer.backgroundColor = UIColor.custom_black.cgColor
-                lbPN.textColor = UIColor.custom_black
-                lbPW.textColor = UIColor.custom_lightGreen
-                if passTxt.text == "" && usernameTxt.text == "" {
+        if isPressPS{
+            self.oULPass.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
+            self.oULPN.layer.backgroundColor = UIColor.custom_black.cgColor
+            lbPN.textColor = UIColor.custom_black
+            lbPW.textColor = UIColor.custom_lightGreen
+            if passTxt.text == "" && usernameTxt.text == "" {
+                
+                UIView.animate(withDuration: 0.3, animations: {
                     
-                    UIView.animate(withDuration: 0.3, animations: {
-        
-                        self.lbPW.center = self.positionPW
-                        self.lbPW.font.withSize(17.0)
-                        self.lbPN.center = self.usernameTxt.center
-                        self.lbPN.font.withSize(30.0)
-                     })
-                } else if passTxt.text == "" {
+                    self.lbPW.center = self.positionPW
+                    self.lbPW.font.withSize(17.0)
+                    self.lbPN.center = self.usernameTxt.center
+                    self.lbPN.font.withSize(30.0)
+                })
+            } else if passTxt.text == "" {
+                
+                UIView.animate(withDuration: 0.3, animations: {
                     
-                    UIView.animate(withDuration: 0.3, animations: {
-                        
-                        self.lbPW.center = self.positionPW
-                        self.lbPW.font.withSize(17.0)
-                    })
-                } else if usernameTxt.text == ""  {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        
-                        self.lbPN.center = self.usernameTxt.center
-                        self.lbPN.font.withSize(30.0)
-                        })
-                }
-                isPressPS = !isPressPS
+                    self.lbPW.center = self.positionPW
+                    self.lbPW.font.withSize(17.0)
+                })
+            } else if usernameTxt.text == ""  {
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    self.lbPN.center = self.usernameTxt.center
+                    self.lbPN.font.withSize(30.0)
+                })
             }
+            isPressPS = !isPressPS
+        }
         
     }
     
     @objc func pressPN(textField: UITextField){
         isPressPN = !isPressPN
-
-            if isPressPN{
-                self.oULPass.layer.backgroundColor = UIColor.custom_black.cgColor
-                self.oULPN.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
-                lbPW.textColor = UIColor.custom_black
-                lbPN.textColor = UIColor.custom_lightGreen
-                if usernameTxt.text == ""  && passTxt.text == "" {
+        
+        if isPressPN{
+            self.oULPass.layer.backgroundColor = UIColor.custom_black.cgColor
+            self.oULPN.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
+            lbPW.textColor = UIColor.custom_black
+            lbPN.textColor = UIColor.custom_lightGreen
+            if usernameTxt.text == ""  && passTxt.text == "" {
                 
-                    UIView.animate(withDuration: 0.3, animations: {
-                      
-                        self.lbPN.center = self.positionPN
-                        self.lbPN.font.withSize(17.0)
-                        self.lbPW.center = self.passTxt.center
-                        self.lbPW.font.withSize(30.0)
-                    })
-                } else if usernameTxt.text == ""  {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.lbPN.center = self.positionPN
-                        self.lbPN.font.withSize(17.0)
-                        })
-                } else if passTxt.text == "" {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.lbPW.center = self.passTxt.center
-                        self.lbPW.font.withSize(30.0)
-                    })
-                }
-                isPressPN = !isPressPN
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    self.lbPN.center = self.positionPN
+                    self.lbPN.font.withSize(17.0)
+                    self.lbPW.center = self.passTxt.center
+                    self.lbPW.font.withSize(30.0)
+                })
+            } else if usernameTxt.text == ""  {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.lbPN.center = self.positionPN
+                    self.lbPN.font.withSize(17.0)
+                })
+            } else if passTxt.text == "" {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.lbPW.center = self.passTxt.center
+                    self.lbPW.font.withSize(30.0)
+                })
+            }
+            isPressPN = !isPressPN
         }
-
+        
     }
     
     @IBAction func pressShowBtn(_ sender: UIButton) {
@@ -271,7 +270,7 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
             self.domain = item
             print("domain \(String(describing: self.domain))")
         }
-
+        
     }
     
     
@@ -293,7 +292,7 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
             
         }
         
-
+        
         
     }
     
@@ -303,14 +302,14 @@ class RegisterView: UIViewController, UITextFieldDelegate  {
             self.btnToHome.alpha = 0
             self.btnToHome.center = self.btnBGToHome.center
             self.btnBGToHome.layer.backgroundColor = UIColor.custom_lightGreen.cgColor
-            })
+        })
         
         
     }
     
-
     
-
+    
+    
     
 }
 
@@ -355,40 +354,63 @@ extension RegisterView : UITableViewDelegate,UITableViewDataSource {
         if checkNeedValue() {
             setUserPass()
             registerSipUA()
-           ProgressHUD.show()
+            ProgressHUD.show()
             print(sipUAManager.getRegisterStatus())
-
-            if sipUAManager.getRegisterStatus() == "Registered" {
-            
-                ProgressHUD.dismiss()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MainHomeID") as! MainHomeVC
-                // Set destination properties
-                
-                vc.usernameL = usernameTxt.text!
-                vc.passL = passTxt.text!
-                //                    mainView.currentUser
-                navigationController?.pushViewController(vc, animated: true)
-
-                
-            } else {
-//                register()
-            }
- 
+            chkregisterStatusss()
+        }
+    }
+    
+    func chkregisterStatusss(){
+        //        1. Not registered
+        //
+        //        2. Registration in progress
+        //
+        //        3. Registered
+        //
+        //        4. Registration cleared
+        //
+        //        5. Registration failed
+        //
+        //        6. Not connected
+        
+        switch sipUAManager.getRegisterStatus() {
+        case "Not registered":
+            print("Not registered")
+        case "Registration in progress":
+            print("Registration in progress")
+            self.chkregisterStatusss()
+        case "Registered":
+            print("Registered")
+            ProgressHUD.dismiss()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainHomeID") as! MainHomeVC
+            // Set destination properties
+            vc.usernameL = usernameTxt.text!
+            vc.passL = passTxt.text!
+//            mainView.currentUser
+            navigationController?.pushViewController(vc, animated: true)
+        case "Registration cleared":
+            print("Registration cleared")
+        case "Registration failed":
+            print("Registration failed")
+        case "Not connected":
+            print("Not connected")
+        default:
+            break
         }
     }
     
     /* Check register value */
     func checkNeedValue() -> Bool {
         if usernameTxt.text == nil || usernameTxt.text == "" {
-
+            
             presentAlert(withTitle: "Please insert a user name.", message: "")
             return false
             
         } else if passTxt.text == nil || passTxt.text == "" {
             presentAlert(withTitle: "Please insert a password.", message: "")
             return false
-
+            
         } else if domain == nil || passTxt.text == "" {
             presentAlert(withTitle: "Please choose a domain .", message: "")
             return false
@@ -399,7 +421,7 @@ extension RegisterView : UITableViewDelegate,UITableViewDataSource {
     func setUserPass(){
         username = usernameTxt.text
         password = passTxt.text
-        print("user: \(String(describing: username)) pass:\(String(describing: password)) ")
+//        print("user: \(String(describing: username)) pass:\(String(describing: password)) ")
     }
     
     // MARK: - Registeration
@@ -408,11 +430,11 @@ extension RegisterView : UITableViewDelegate,UITableViewDataSource {
         transport = "UDP"
         sipUAManager.register(displayName: displayName, userID: userId, username: username, password: password, domain: domain, port: port, destination: destination, transport: transport)
         // Set RTP encryption
-        if transport?.lowercased() == "tls" {
-            sipUAManager.enableRTPEncryptions(type: "srtp")
-        } else {
+//        if transport?.lowercased() == "tls" {
+//            sipUAManager.enableRTPEncryptions(type: "srtp")
+//        } else {
             sipUAManager.enableRTPEncryptions(type: nil)
-        }
+//        }
     }
     
     

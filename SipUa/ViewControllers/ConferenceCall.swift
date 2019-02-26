@@ -9,13 +9,19 @@
 import UIKit
 
 class ConferenceCall: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
+    @IBOutlet weak var conferenceCallNavigationItem: UINavigationBar!
+    
+    @IBOutlet weak var newCallBtn: UIButton!
+    
+    @IBOutlet weak var pauseCallBtn: UIButton!
+    
+    @IBOutlet weak var microphonBtn: UIButton!
+    
+    @IBOutlet weak var speakerBtn: UIButton!
+    
+    @IBOutlet weak var conferenceCallTable: UITableView!
+    
+    @IBOutlet weak var pauseCallTable: UITableView!
+    
 }

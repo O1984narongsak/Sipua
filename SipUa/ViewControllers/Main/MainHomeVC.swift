@@ -123,14 +123,22 @@ class MainHomeVC: BaseVC {
         pager.selectedTabTitleFont = UIFont.boldSystemFont(ofSize: 12)
         
         setUpView()
+        debug()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if sipUAManager.getDefaultConfig() != nil {
             registerForSipUANotifications()
-        }
+            askAudioPermission()
+                
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+            deregisterForSipUANotifications()
         
     }
     
@@ -138,7 +146,24 @@ class MainHomeVC: BaseVC {
         
         self.addTitle(text: "Home")
         self.addHamberBar()
-        askAudioPermission()
+        
+    }
+    
+    func debug(){
+        // Debug to get all config by identity username
+        var arrayConfigUsername: [String] = []
+        for prxCfg in sipUAManager.getAllConfigs() {
+            let eachCfgUsername = SipUtils.getIdentityUsernameFromConfig(config: prxCfg!)
+            arrayConfigUsername.append(eachCfgUsername!)
+        }
+        os_log("RegisterView : All config username : %@", log: log_app_debug, type: .debug, arrayConfigUsername)
+        // Debug to get all auth info by username
+        var arrayAuthInfoUsername: [String] = []
+        for authInfo in sipUAManager.getAllAuthInfos() {
+            let eachAuthInfoUsername = SipUtils.getUsernameFromAuthInfo(authInfo: authInfo!)
+            arrayAuthInfoUsername.append(eachAuthInfoUsername!)
+        }
+        os_log("RegisterView : All auth info username : %@", log: log_app_debug, type: .debug, arrayAuthInfoUsername)
     }
     
     // MARK: - Received call id from push
@@ -353,6 +378,11 @@ class MainHomeVC: BaseVC {
         
     }
     
+    func deregisterForSipUANotifications() {
+        NotificationCenter.default.removeObserver(self, name: .kLinphoneCallStateUpdate, object: nil)
+        
+    }
+    
     // MARK: - Calling
     /* Call state update from notification */
     @objc func callStateUpdate(notification: Notification) {
@@ -430,7 +460,7 @@ class MainHomeVC: BaseVC {
             }
             
         }
-        
+        //yeah
     }
     
     // MARK: - Permissions

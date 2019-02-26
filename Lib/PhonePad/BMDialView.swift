@@ -17,6 +17,8 @@ class BMDialView: UIView, UITextFieldDelegate {
     var BorderColor = UIColor.custom_lightGreen
     var CursorColor = UIColor.custom_lightGreen
     
+    var isVideoCall: Bool = false
+    
     private var padView: UIView?
     private var textField: UITextField?
     private var deleteBtnTimer: Timer?
@@ -129,6 +131,18 @@ class BMDialView: UIView, UITextFieldDelegate {
     @objc private func call(btn: UIButton) {
         callTapped?((textField?.text)!)
         print("\(String(describing: textField?.text))")
+        audioCall()
+    }
+    
+    @objc func audioCall(){
+        if let username = textField!.text {
+            guard Controller.getGSMCalls().count == 0 else {
+//                os_log("MainView : GSM call happen, Cancelling outgoing VoIP call", log: log_app_error, type: .error)
+                return
+            }
+            isVideoCall = false
+//            sipUAManager.newOutgoingCall(to: username, domain: domain, port: nil, displayName: nil, enableVideo: false)
+        }
     }
     
     @objc private func longPressedDeleteBtn(gesture: UILongPressGestureRecognizer) {

@@ -21,19 +21,6 @@ let Provider: CallKitProvider = AppDelegate.shared.callKitProvider
 ///** CallKit Controller Global properties */
 let Controller: CallKitCallController = AppDelegate.shared.callKitCallController
 
-public enum AppStoryboard: String {
-    // All storyboard in app
-    case Main, Calling, History
-    private var instance: UIStoryboard {
-        return UIStoryboard(name: self.rawValue, bundle: nil)
-    }
-    // Contraint a generic type with UIViewController means requiring T to be a subclass of UIViewController
-    func viewController<T: UIViewController>(viewControllerClass: T.Type) -> T {
-        let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
-        return self.instance.instantiateViewController(withIdentifier: storyboardID) as! T
-    }
-}
-
 /** Structure string for application view controller class name */
 public struct AppViewController {
     struct Name {
@@ -93,34 +80,71 @@ public struct VoIPPush {
     }
 }
 
+public enum AppStoryboard: String {
+    // All storyboard in app
+    case Main, Calling, History
+    private var instance: UIStoryboard {
+        return UIStoryboard(name: self.rawValue, bundle: nil)
+    }
+    // Contraint a generic type with UIViewController means requiring T to be a subclass of UIViewController
+    func viewController<T: UIViewController>(viewControllerClass: T.Type) -> T {
+        let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
+        return self.instance.instantiateViewController(withIdentifier: storyboardID) as! T
+    }
+}
+
 //MARK: - Appdelegate class
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    
     
     class var shared: AppDelegate{
         return UIApplication.shared.delegate as! AppDelegate
     }
     
+    var window: UIWindow?
+    
+    // Property for app background task
+    var appStartBgTask: UIBackgroundTaskIdentifier = .invalid
+    // Properties for CallKit and sipua
     let callKitProvider = CallKitProvider()
     let callKitCallController = CallKitCallController()
     let sipUAManager = SipUAManager.instance()
     // Property to check app received push wake or not
     // If received, That means register session for user at brekeke server is expire
     var receivedPushWake: Bool = false
+    
+    let transition = RightLeftTransition()
    
     // A call id for incoming call/incoming message push notification, To check whether call id is already precess with CallKit or not
     private var pushCallIDs: [String:String] = [:]
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        os_log("AppDelegate : didFinishLaunchingWithOptions", log: log_app_debug, type: .debug)
+        
+        // Start background task to init library
+        appStartBgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
+            os_log("AppDelegate : Background task for launching application expired", log: log_app_debug, type: .debug)
+            UIApplication.shared.endBackgroundTask(self.appStartBgTask)
+            self.appStartBgTask = .invalid
+        })
         
         // Initialize library
         sipUAManager.initSipUAManager()
         // Enable using CallKit
         sipUAManager.enableCallKit(enable: true)
+        
+        // Stop launching background task
+        if appStartBgTask != .invalid {
+            UIApplication.shared.endBackgroundTask(appStartBgTask)
+            appStartBgTask = .invalid
+        }
+        
+        // Notifications
+        registerNotifications()
         
         var appState: String = "No State"
         switch application.applicationState {
@@ -429,7 +453,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isVideoCall = sipUAManager.isRemoteVideoEnabled(call: call)
         content.title = "Incoming \(isVideoCall ? "video" : "audio") call."
         content.body = "From \((sipUAManager.getRemoteDisplayName(call: call) ?? sipUAManager.getRemoteUsername(call: call)) ?? "[Unknown]")"
-        content.categoryIdentifier = isVideoCall ? UserNotification.Category.VideoCall : UserNotification.Category.AudioCall
+//        content.categoryIdentifier = isVideoCall ? UserNotification.Category.VideoCall : UserNotification.Category.AudioCall
         let username = sipUAManager.getRemoteUsername(call: call)!
         let callID = sipUAManager.getCallCallID(call: call)
         let dictionary: [AnyHashable:Any] = ["call-id" : callID]
@@ -441,6 +465,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 os_log("AppDelegate : Add local notification error", log: log_app_error, type: .error)
             }
         })
+    }
+    
+    // MARK: - VoIP push
+    /* Register a VoIP notification */
+    func registerNotifications() {
+        os_log("AppDelegate : Register VoIP push", log: log_app_debug, type: .debug)
+        // Get main queue
+        let mainQueue = DispatchQueue.main
+        // Create a push registry object
+        let voipRegistry = PKPushRegistry(queue: mainQueue)
+        // Set delegate
+        voipRegistry.delegate = self
+        // Set push type
+        voipRegistry.desiredPushTypes = [.voIP]
+        // Config action, category for notification
+        configUINotification()
+    }
+    
+    // MARK: - User notification
+    /* Request permission and setup action, category */
+    func configUINotification() {
+        // Create set to collect notification category
+        var notificationCategories: Set<UNNotificationCategory> = []
+        
+        // Calling
+        // Audio only
+        let actionAnswer = UNNotificationAction(identifier: UserNotification.Action.AnswerAudio, title: "Answer", options: [.foreground])
+        let actionDecline = UNNotificationAction(identifier: UserNotification.Action.Decline, title: "Decline", options: [])
+        let incomingAudioCallCategory = UNNotificationCategory(identifier: UserNotification.Category.AudioCall, actions: [actionAnswer,actionDecline], intentIdentifiers: [], options: [.customDismissAction])
+        // Add to set
+        notificationCategories.insert(incomingAudioCallCategory)
+        // Video or audio
+        let actionAnswerAudio = UNNotificationAction(identifier: UserNotification.Action.AnswerAudio, title: "Answer Audio", options: [.foreground])
+        let actionAnswerVideo = UNNotificationAction(identifier: UserNotification.Action.AnswerVideo, title: "Answer Video", options: [.foreground])
+        let actionDeclineCall = UNNotificationAction(identifier: UserNotification.Action.Decline, title: "Decline", options: [])
+        let incomingVideoCallCategory = UNNotificationCategory(identifier: UserNotification.Category.VideoCall, actions: [actionAnswerAudio,actionAnswerVideo,actionDeclineCall], intentIdentifiers: [], options: [.customDismissAction])
+        // Add to set
+        notificationCategories.insert(incomingVideoCallCategory)
+        
+        // Request video call
+        let actionAccept = UNNotificationAction(identifier: UserNotification.Action.Accept, title: "Accept", options: [.foreground])
+        let actionCancel = UNNotificationAction(identifier: UserNotification.Action.Cancel, title: "Cancel", options: [])
+        let reqVideoCallCategory = UNNotificationCategory(identifier: UserNotification.Category.RequestVideoCall, actions: [actionAccept,actionCancel], intentIdentifiers: [], options: [.customDismissAction])
+        // Add to set
+        notificationCategories.insert(reqVideoCallCategory)
+        
+        // Request open camera
+        let actionOpen = UNNotificationAction(identifier: UserNotification.Action.Open, title: "Open", options: [.foreground])
+        let actionClose = UNNotificationAction(identifier: UserNotification.Action.Close, title: "Close", options: [])
+        let reqOpenCameraCategory = UNNotificationCategory(identifier: UserNotification.Category.RequestOpenCamera, actions: [actionOpen,actionClose], intentIdentifiers: [], options: [.customDismissAction])
+//        // Add to set
+        notificationCategories.insert(reqOpenCameraCategory)
+        
+        // Messaging
+        let actionSend = UNTextInputNotificationAction(identifier: UserNotification.Action.Reply, title: "Reply", options: [], textInputButtonTitle: "Send", textInputPlaceholder: "Message...")
+        let actionRead = UNNotificationAction(identifier: UserNotification.Action.MarkAsRead, title: "Mark as read", options: [])
+        let incomingMsgCategory = UNNotificationCategory(identifier: UserNotification.Category.Message, actions: [actionSend,actionRead], intentIdentifiers: [], options: [.customDismissAction])
+        // Add to set
+        notificationCategories.insert(incomingMsgCategory)
+        
+        // Register category
+        os_log("AppDelegate : Set notification category in notification center", log: log_app_debug, type: .debug)
+        UNUserNotificationCenter.current().setNotificationCategories(notificationCategories)
+        
+        // Sel delegate to show notification when app is in foreground
+        UNUserNotificationCenter.current().delegate = self
+        
+        // Request permission to send local notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            os_log("AppDelegate : User notifications permission : %@", log: log_app_debug, type: .debug, granted ? "allow" : "denied")
+            guard granted else {
+                os_log("AppDelegate : User not allow remote notification", log: log_app_error, type: .error)
+                return
+            }
+            // If permission granted, Register for remote notification
+            //self.registerRemoteNotifications()
+        }
     }
     
     /* Add call id from push to dictionary */
@@ -527,11 +628,262 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
+    /* Close missed call local notification with call */
+    public func closeMessageReceivedLocalNotification(message: OpaquePointer) {
+        // Get username
+        let remoteAddr = sipUAManager.getMessageRemoteAddress(message: message)
+        let username = SipUtils.getUsernameFromAddress(address: remoteAddr)!
+        os_log("AppDelegate : Remove message received local notification from notification center", log: log_app_debug, type: .debug)
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [UserNotification.Identifier.MessageReceived + username])
+    }
     
-    
-
-
 }
+
+// MARK: - Extension delegate for user notification
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    // MARK: - Romote notification (Push Notification)
+    // The result of calling registerForRemoteNotifications() function
+    /* Register remote notification success */
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        os_log("AppDelegate : didRegisterForRemoteNotificationsWithDeviceToken", log: log_app_debug, type: .debug)
+        os_log("AppDelegate : Register remote notification success", log: log_app_debug, type: .debug)
+        let tmpToken = deviceToken.map({ (data) -> String in
+            String(format: "%02.2hhx", data)
+        }).joined()
+        os_log("AppDelegate : Push notification token : %@", log: log_app_debug, type: .debug, tmpToken)
+        sipUAManager.setPushNotificationToken(token: deviceToken)
+    }
+    
+    /* Register remote notification failed */
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        os_log("AppDelegate : didFailToRegisterForRemoteNotificationsWithError", log: log_app_debug, type: .debug)
+        os_log("AppDelegate : Register remote notification failed : %@", log: log_app_error, type: .error, error as CVarArg)
+        sipUAManager.setPushNotificationToken(token: nil)
+    }
+    
+    /* Remote notification received */
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        os_log("AppDelegate : Receive remote notification", log: log_app_debug, type: .debug)
+        processPush(userInfo: userInfo, identifier: "Remote")
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    // MARK: - Local notification
+    /* This will be called when the notification action is tapped */
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        os_log("AppDelegate : Receive response action from notification", log: log_app_debug, type: .debug)
+        
+        let request = response.notification.request
+        let requestContent = request.content
+        let action = response.actionIdentifier
+        os_log("AppDelegate : Action identifier : %@", log: log_app_debug, type: .debug, action)
+        os_log("AppDelegate : Notification request identifier : %@", log: log_app_debug, type: .debug, request.identifier)
+        os_log("AppDelegate : Notification request content category identifier : %@", log: log_app_debug, type: .debug, requestContent.categoryIdentifier)
+        
+        guard let callID = requestContent.userInfo["call-id"] as? String
+            else {
+                os_log("AppDelegate : Call id in user info is nil", log: log_app_error, type: .error)
+                return
+        }
+        os_log("AppDelegate : Call id : %@", log: log_app_debug, type: .debug, callID)
+        // MARK: - Calling
+        if let call = sipUAManager.getCallFromCallID(callID: callID) {
+            os_log("AppDelegate : Call id is call", log: log_app_debug, type: .debug)
+            switch action {
+            // MARK: Answer audio/video action
+            case UserNotification.Action.AnswerAudio , UserNotification.Action.AnswerVideo :
+                os_log("AppDelegate : Answer audio/video action from notification", log: log_app_debug, type: .debug)
+                let answerVideo = (action == UserNotification.Action.AnswerVideo)  ? true : false
+                if useCallKit {
+                    // Check running call
+                    // In case there is one running call, incoming call received, user tap answer action from local notification
+                    // If no running call found that means two incoming call come
+                    // and user tap answer call from local notification not from call native UI
+                    if sipUAManager.countRunningCall() == 0 {
+                        var callKitUUID: UUID?
+                        //var callKitCall: OpaquePointer?
+                        // End another call first
+                        if Controller.getControllerCalls().count != 0 {
+                            os_log("AppDelegate : All call in controller : %i", log: log_app_debug, type: .debug, Controller.getControllerCalls().count)
+                            // Temporary keep outgoing CallKit uuid
+                            callKitUUID = Controller.getControllerCalls().last?.uuid
+                            //callKitCall = Controller.getControllerCalls().last?.call
+                        }
+                        // Start call
+                        let uuid = UUID()
+                        let callName = (sipUAManager.getRemoteDisplayName(call: call) ?? sipUAManager.getRemoteUsername(call: call)) ?? "Unknown"
+                        os_log("AppDelegate : Start CallKit call name : %@", log: log_app_debug, type: .debug, callName)
+                        // Set isOutgoing input to true for being called in call state change streams running
+                        Controller.startCall(uuid: uuid, handle: callName, call: call, isVideo: answerVideo, isOutgoing: true)
+                        if let uuid = callKitUUID /*, let call = callKitCall*/ {
+                            // If outgoing call happen, There is incoming call come, User answer call from notification
+                            if sipUAManager.countOutgoingCall() != 0 {
+                                // Calling end CallKit later because provider callback function [Activate audio session and Deacivate audio session]
+                                // are not called as sequence, Then we have to make sure that activate audio session called first
+                                os_log("AppDelegate : End the previous CallKit and hangup a call", log: log_app_debug, type: .debug)
+                                Controller.endCall(uuid: uuid)
+                                // If no out going call (there are two incoming call come), User tap answer call from notification (the second call)
+                                // that is not a call active with CallKit (showed by native UI) then we have to start CallKit with a second call
+                                // and end CallKit with the first call (Switch CallKit to second call)
+                            } else {
+                                // Report call to end CallKit later because provider callback function [Activate audio session
+                                // and Deacivate audio session] are not called as sequence,
+                                // Then we have to make sure that activate audio session called first
+                                os_log("AppDelegate : Report to end the previous CallKit", log: log_app_debug, type: .debug)
+                                Provider.callProvider.reportCall(with: uuid, endedAt: nil, reason: .remoteEnded)
+                                //Controller.removeCall(call: call)
+                            }
+                        }
+                        // Answer call normally if found running call
+                    } else {
+                        sipUAManager.answer(call: call, withVideo: answerVideo)
+                    }
+                    // Answer call normally if not using CallKit
+                } else {
+                    sipUAManager.answer(call: call, withVideo: answerVideo)
+                }
+            // MARK: Decline action
+            case UserNotification.Action.Decline :
+                os_log("AppDelegate : Decline action from notification", log: log_app_debug, type: .debug)
+                sipUAManager.decline(call: call)
+            // MARK: Accept/open action
+            case UserNotification.Action.Accept , UserNotification.Action.Open :
+                os_log("AppDelegate : Accept/Open action from notification", log: log_app_debug, type: .debug)
+                if let callingView = CallingView.viewControllerInstance() {
+                    
+//                    if callingView.toClass == AppView.ClassName.IncomingCall {
+//                        // Dismiss popup
+//                        callingView.closeAskingAcceptOpenCameraPopup()
+//                        // Close local notification
+//                        closeRequestOpenCameraLocalNotification(call: call)
+//                        // Open camera
+//                        sipUAManager.enableCamera(enable: true, captureView: callingView.videoCallSubView.captureView)
+//                        // Set open camera status to use in AppDelegate class
+//                        isCameraOpen = true
+//                    } else
+                     if callingView.toClass == AppView.ClassName.IncomingCall {
+                        // Dismiss popup
+//                        callingView.closeAskingAcceptVideoCallPopup()
+                        // Close local notification
+//                        closeRequestVideoCallLocalNotification(call: call)
+                        // Accept call update
+                        sipUAManager.acceptCallUpdate()
+                        if useCallKit {
+                            // CallKit
+                            if let uuid = Controller.getUUID(call: call) {
+                                Provider.updateCall(call: call, uuid: uuid)
+                            } else {
+                                os_log("AppDelegate : Can't get uuid from call to update by remote", log: log_app_error, type: .error)
+                            }
+                        }
+                    }
+                    
+                } else {
+                    os_log("AppDelegate : Can't get CallingView instance", log: log_app_error, type: .error)
+                }
+            // MARK: Cancel/close action
+            case UserNotification.Action.Cancel , UserNotification.Action.Close :
+                os_log("AppDelegate : Cancel/Close action from notification", log: log_app_debug, type: .debug)
+                if let callingView = CallingView.viewControllerInstance() {
+                    
+
+                    if callingView.toClass == AppView.ClassName.IncomingCall {
+                        
+                        // Dismiss popup
+//                        callingView.closeAskingAcceptVideoCallPopup()
+                        // Close local notification
+//                        closeRequestVideoCallLocalNotification(call: call)
+                        // Refresh call to audio
+                        sipUAManager.refreshCall()
+                        if useCallKit {
+                            // CallKit
+                            if let uuid = Controller.getUUID(call: call) {
+                                Provider.updateCall(call: call, uuid: uuid)
+                            } else {
+                                os_log("AppDelegate : Can't get uuid from call to update by remote", log: log_app_error, type: .error)
+                            }
+                        }
+                    }
+                    
+                } else {
+                    os_log("AppDelegate : Can't get CallingView instance", log: log_app_error, type: .error)
+                }
+            // MARK: Default action
+            case UNNotificationDefaultActionIdentifier:
+                os_log("AppDelegate : Default action from notification", log: log_app_debug, type: .debug)
+            // MARK: Dismiss action
+            case UNNotificationDismissActionIdentifier:
+                os_log("AppDelegate : Dismiss action from notification", log: log_app_debug, type: .debug)
+            default :
+                os_log("AppDelegate : Action from notification is not in condition, Should handle it", log: log_app_debug, type: .debug)
+            }
+            // MARK: - Messaging
+        } else {
+            os_log("AppDelegate : Call id is not for call", log: log_app_debug, type: .debug)
+            os_log("AppDelegate : Continue check call id with message", log: log_app_debug, type: .debug)
+            if let message = sipUAManager.getMessageFromCallID(callID: callID) {
+                os_log("AppDelegate : Call id is message", log: log_app_debug, type: .debug)
+                let chatRoom = sipUAManager.getChatRoomFromMsg(message: message)
+                os_log("AppDelegate : Get chat room", log: log_app_debug, type: .debug)
+                switch action {
+                // MARK: Reply action
+                case UserNotification.Action.Reply :
+                    os_log("AppDelegate : Reply action from notification", log: log_app_debug, type: .debug)
+                    // Cast response to text input response type to get text
+                    if let textResponse = response as? UNTextInputNotificationResponse {
+                        let text = textResponse.userText
+                        if text != "" && text.count != 0 && !text.isEmpty {
+                            // Create message
+                            let message = sipUAManager.createMessage(chatRoom: chatRoom, message: text)
+                            // Send message
+                            sipUAManager.sendMessage(message: message)
+                        }
+                        // Mark as read in case user not open the app if user open app mark as read will be called in setupChatConversation()
+                        sipUAManager.markAsRead(chatRoom: chatRoom)
+                        // Update unread message badge in main view
+                        NotificationCenter.default.post(name: .appUpdateUI, object: nil)
+                        // Close message received notification
+                        closeMessageReceivedLocalNotification(message: message)
+                    }
+                // MARK: Mark as read action
+                case UserNotification.Action.MarkAsRead :
+                    os_log("AppDelegate : Mark as read action from notification", log: log_app_debug, type: .debug)
+                    // Mark as read
+                    sipUAManager.markAsRead(chatRoom: chatRoom)
+                    // Update unread message badge in main view
+                    NotificationCenter.default.post(name: .appUpdateUI, object: nil)
+                    // Close message received notification
+                    closeMessageReceivedLocalNotification(message: message)
+                // MARK: Default action
+                case UNNotificationDefaultActionIdentifier:
+                    os_log("AppDelegate : Default action from notification", log: log_app_debug, type: .debug)
+                    os_log("AppDelegate : Present chatting view or load subview", log: log_app_debug, type: .debug)
+//                    let animate = UIApplication.shared.applicationState == .active ? true : false
+//                    presentChattingView(chatRoom: chatRoom, animated: animate)
+                    // Close message received notification
+                    closeMessageReceivedLocalNotification(message: message)
+                // MARK: Dismiss action
+                case UNNotificationDismissActionIdentifier:
+                    os_log("AppDelegate : Dismiss action from notification", log: log_app_debug, type: .debug)
+                default :
+                    os_log("AppDelegate : Action from notification is not in condition, Should handle it", log: log_app_debug, type: .debug)
+                }
+            } else {
+                os_log("AppDelegate : Not found message from call id", log: log_app_debug, type: .debug)
+            }
+        }
+        completionHandler()
+    }
+    /* To show notification even app in foreground with options */
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        os_log("AppDelegate : Push notification will present", log: log_app_debug, type: .debug)
+        completionHandler([.alert, .badge])
+    }
+    
+    
+}
+
+
 
 // MARK: - Extension delegate for VoIP push
 extension AppDelegate: PKPushRegistryDelegate {
@@ -565,5 +917,21 @@ extension AppDelegate: PKPushRegistryDelegate {
         completion()
     }
     
+}
+
+// MARK: - Extension for transition effect
+extension AppDelegate: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // Prepare present transition animation
+        transition.duration = 0.4
+        transition.transitionMode = .present
+        return transition
+    }
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // Prepare dismiss transition animation
+        transition.duration = 0.4
+        transition.transitionMode = .dismiss
+        return transition
+    }
 }
 
